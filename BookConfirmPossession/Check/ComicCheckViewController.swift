@@ -153,15 +153,7 @@ extension ComicCheckViewController : AVCaptureMetadataOutputObjectsDelegate {
             let start = code.startIndex
             
             if code[start] == "9" {
-                //                ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-                
-                
-                
-                
-                
-                
-                //                ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-                
+
                 
                 let storyboard: UIStoryboard = UIStoryboard(name: "ComicCheckResult", bundle: nil)//遷移先のStoryboardを設定
                 let nextView = storyboard.instantiateViewController(withIdentifier: "comicCheckResult") as! ComicCheckResultViewController

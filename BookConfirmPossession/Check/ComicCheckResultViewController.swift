@@ -51,28 +51,12 @@ class ComicCheckResultViewController: UIViewController {
             view.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
         }
         
-        //                let semaphore = DispatchSemaphore(value: 0)
-        
-        // let userDefaults = UserDefaults.standard
         // リクエストURL組み立て
         let url: URL = URL(string: "https://api.openbd.jp/v1/get?isbn=\(barCode)")!
-        //        =================================
+        
         print(url)
         let task: URLSessionTask = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) in
             do  {
-                //        // リクエストに必要な情報を生成
-                //        let req = URLRequest(url: req_url)
-                //        // データ転送を管理するためのセッションを生成
-                //        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-                //        // リクエストをタスクとして登録
-                //        print("a")
-                //        let task = session.dataTask(with: req,completionHandler: {
-                //            (data,response,error) in
-                //            print("c")
-                //            // セッション終了
-                //            session.finishTasksAndInvalidate()
-                //            // do try catch　エラーハンドリング
-                //            do{
                 print("d")
                 let jsonArray = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! [Any]
                 
@@ -105,71 +89,19 @@ class ComicCheckResultViewController: UIViewController {
                         self.comicCoverImageView.image = UIImage(named: "notFoundCover")
                         
                     }
-                    //                self.semaphore.signal()
+                    
                 }
                 
             }catch let error {
                 print(error)
             }
-            //                    semaphore.signal()
+            
         })
         print("start")
         task.resume()
-        //        semaphore.wait()
+    
         
-        
-        
-        
-        
-        //        self.comicCheck.searchComic(code: self.barCode)
-        
-        
-        
-        
-        //        if let title =  comic["title"]{
-        //            // タイトル
-        //            comicTitleLabel.text = title
-        //        }else{
-        //            comicTitleLabel.text = "取得できませんでした。"
-        //        }
-        //        // 表紙　なければNotFound画像
-        //        if let cover = comic["cover"]{
-        //            comicCoverImageView.downloaded(from:cover)
-        //        }else{
-        //            comicCoverImageView.image = UIImage(named: "notFoundCover")
-        //
-        //        }
-        
-        //        let code:String = UserDefaults.standard.string(forKey: "barcode")!
-        //
-        //        let semaphore = DispatchSemaphore(value: 0)
-        //        if let mode = userDefaults.string(forKey: "mode"){
-        //            print("aaa")
-        //            comicCheck.searchComic(code: code,mode: mode)
-        //            semaphore.signal()
-        //        }
-        //        semaphore.wait()
-        //        let comicArray = UserDefaults.standard.object(forKey: "comic") as? [String:String] ?? [String:String]
-        //        let comic = (title: comicArray["title"], pubdate: comicArray["pubdate"], cover: comicArray["cover"])
-        //
-        //        print("bbb")
-        //
-        //        comicTitleLabel.text = comic.title
-        //        print(comic.cover)
-        //        if comic.cover != "" {
-        //            comicCoverImageView.downloaded(from:comic.cover)
-        //        }else{
-        //            comicCoverImageView.image = UIImage(named: "notFoundCover")
-        //        }
-        //
-        //        let checkmode = "add"
-        //        userDefaults.set(checkmode, forKey: "mode")
-        //        userDefaults.synchronize()
-        //
-        //
-        //
-        //
-        //
+    
         
     }
     
