@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GiB-aU-ynP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--履歴-->
+        <scene sceneID="KRL-NR-VlE">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="GiB-aU-ynP" customClass="HistoryViewController" customModule="BookConfirmPossession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2I5-4g-Zan">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="25q-ln-yqu" customClass="ComicListCollectionView" customModule="BookConfirmPossession" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="cOZ-bG-izA">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="GiB-aU-ynP" id="vgC-7L-GF1"/>
+                                    <outlet property="delegate" destination="GiB-aU-ynP" id="0Ge-0h-YJT"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Rve-h5-FKL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="25q-ln-yqu" firstAttribute="leading" secondItem="Rve-h5-FKL" secondAttribute="leading" id="AIm-6O-jil"/>
+                            <constraint firstItem="Rve-h5-FKL" firstAttribute="trailing" secondItem="25q-ln-yqu" secondAttribute="trailing" id="FsW-U7-oXf"/>
+                            <constraint firstItem="25q-ln-yqu" firstAttribute="top" secondItem="Rve-h5-FKL" secondAttribute="top" id="Ov1-9F-PDl"/>
+                            <constraint firstItem="Rve-h5-FKL" firstAttribute="bottom" secondItem="25q-ln-yqu" secondAttribute="bottom" id="OzS-ZV-G3g"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="履歴" id="P44-YY-rnD">
+                        <barButtonItem key="backBarButtonItem" title="履歴" id="Rc5-ug-d9J"/>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="historyCollectionView" destination="25q-ln-yqu" id="7sr-9u-5Mw"/>
+                        <segue destination="fhy-Xz-gBa" kind="show" identifier="toHistoryDetail" id="0x2-ty-KRL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="134-ax-m0m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="438" y="52"/>
+        </scene>
+        <!--HistoryDetail-->
+        <scene sceneID="CPf-cQ-hCl">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lhh-5W-3pC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="HistoryDetail" id="fhy-Xz-gBa" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="4kx-T5-nrS"/>
+                </viewControllerPlaceholder>
+            </objects>
+            <point key="canvasLocation" x="1138" y="52"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

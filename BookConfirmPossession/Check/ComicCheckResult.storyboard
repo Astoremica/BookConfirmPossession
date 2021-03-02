@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vip-Xy-Pxf">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Comic Check Result View Controller-->
+        <scene sceneID="Hj0-cz-PH8">
+            <objects>
+                <viewController storyboardIdentifier="comicCheckResult" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vip-Xy-Pxf" customClass="ComicCheckResultViewController" customModule="BookConfirmPossession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FrO-uw-dqa">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L72-he-af5" customClass="NeumorphismView" customModule="BookConfirmPossession" customModuleProvider="target">
+                                <rect key="frame" x="50" y="108" width="290" height="500"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZ5-7T-LO6">
+                                        <rect key="frame" x="105" y="12" width="80" height="30"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SmB-z7-hWb">
+                                        <rect key="frame" x="28.666666666666686" y="54" width="233" height="331"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="233" id="ufp-Ih-Odl"/>
+                                            <constraint firstAttribute="height" constant="331" id="wcf-R8-rzr"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Alz-c5-ZyO">
+                                        <rect key="frame" x="105.33333333333334" y="400" width="79.333333333333343" height="30"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021/03/01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0b-al-HHX">
+                                        <rect key="frame" x="139" y="460" width="111" height="18"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="購入日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2q-wT-92c">
+                                        <rect key="frame" x="40" y="460" width="54" height="18"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SmB-z7-hWb" firstAttribute="centerX" secondItem="L72-he-af5" secondAttribute="centerX" id="Hdz-zS-BuI"/>
+                                    <constraint firstItem="I0b-al-HHX" firstAttribute="top" secondItem="Alz-c5-ZyO" secondAttribute="bottom" constant="30" id="JOM-gG-NBJ"/>
+                                    <constraint firstAttribute="width" constant="290" id="JPr-KS-fSr"/>
+                                    <constraint firstItem="Alz-c5-ZyO" firstAttribute="centerX" secondItem="L72-he-af5" secondAttribute="centerX" id="cxX-Ne-cde"/>
+                                    <constraint firstItem="j2q-wT-92c" firstAttribute="top" secondItem="Alz-c5-ZyO" secondAttribute="bottom" constant="30" id="evL-M1-JlU"/>
+                                    <constraint firstItem="SmB-z7-hWb" firstAttribute="top" secondItem="vZ5-7T-LO6" secondAttribute="bottom" constant="12" id="fcE-9F-keU"/>
+                                    <constraint firstAttribute="trailing" secondItem="I0b-al-HHX" secondAttribute="trailing" constant="40" id="g8R-Lc-02D"/>
+                                    <constraint firstItem="vZ5-7T-LO6" firstAttribute="centerX" secondItem="L72-he-af5" secondAttribute="centerX" id="iyY-qL-4zb"/>
+                                    <constraint firstItem="Alz-c5-ZyO" firstAttribute="top" secondItem="SmB-z7-hWb" secondAttribute="bottom" constant="15" id="ktx-QL-a3Z"/>
+                                    <constraint firstAttribute="height" constant="500" id="oCJ-ha-gW3"/>
+                                    <constraint firstItem="vZ5-7T-LO6" firstAttribute="top" secondItem="L72-he-af5" secondAttribute="top" constant="12" id="wBL-11-edJ"/>
+                                    <constraint firstItem="j2q-wT-92c" firstAttribute="leading" secondItem="L72-he-af5" secondAttribute="leading" constant="40" id="y1t-jK-jg3"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynZ-GY-Yp7" customClass="NeumorphismButton" customModule="BookConfirmPossession" customModuleProvider="target">
+                                <rect key="frame" x="50" y="638" width="290" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="9fB-sx-5RA"/>
+                                    <constraint firstAttribute="height" constant="60" id="uqd-GV-l3x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" systemColor="systemBlueColor"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7N-hn-y9K" customClass="NeumorphismButton" customModule="BookConfirmPossession" customModuleProvider="target">
+                                <rect key="frame" x="50" y="718" width="290" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="dtS-Up-oad"/>
+                                    <constraint firstAttribute="height" constant="60" id="o1a-F1-tDt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
+                                <state key="normal" title="他の本を追加"/>
+                                <connections>
+                                    <action selector="addAnotherComicButtonAction:" destination="Vip-Xy-Pxf" eventType="touchUpInside" id="nHi-ET-D1g"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NNT-VO-tRI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="L72-he-af5" firstAttribute="centerX" secondItem="FrO-uw-dqa" secondAttribute="centerX" id="7gF-Wt-WF0"/>
+                            <constraint firstItem="ynZ-GY-Yp7" firstAttribute="centerX" secondItem="FrO-uw-dqa" secondAttribute="centerX" id="Rat-Qa-moW"/>
+                            <constraint firstItem="ynZ-GY-Yp7" firstAttribute="top" secondItem="L72-he-af5" secondAttribute="bottom" constant="30" id="Tdr-Vu-P2S"/>
+                            <constraint firstItem="W7N-hn-y9K" firstAttribute="centerX" secondItem="FrO-uw-dqa" secondAttribute="centerX" id="ced-gU-7nh"/>
+                            <constraint firstItem="W7N-hn-y9K" firstAttribute="top" secondItem="ynZ-GY-Yp7" secondAttribute="bottom" constant="20" id="ncs-aj-ZQ6"/>
+                            <constraint firstItem="L72-he-af5" firstAttribute="top" secondItem="NNT-VO-tRI" secondAttribute="top" constant="20" id="wLu-c3-dA7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UUR-e0-S1h"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="anotherComicButton" destination="W7N-hn-y9K" id="SRh-n1-Urm"/>
+                        <outlet property="checkResultLabel" destination="vZ5-7T-LO6" id="SB9-pq-J25"/>
+                        <outlet property="comicCoverImageView" destination="SmB-z7-hWb" id="RjL-79-bZd"/>
+                        <outlet property="comicPurchaseDate" destination="I0b-al-HHX" id="PfU-5v-srZ"/>
+                        <outlet property="comicPurechaseButton" destination="ynZ-GY-Yp7" id="7yG-Cq-VpI"/>
+                        <outlet property="comicTitleLabel" destination="Alz-c5-ZyO" id="a6j-ls-0ge"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jPm-QZ-kVx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="938.46153846153845" y="86.729857819905206"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="W7N-hn-y9K">
+            <size key="intrinsicContentSize" width="180" height="42"/>
+        </designable>
+        <designable name="ynZ-GY-Yp7">
+            <size key="intrinsicContentSize" width="100" height="42"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
