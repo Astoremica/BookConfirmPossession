@@ -16,7 +16,6 @@
 		ED2F8C0825DF6770008D3D78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2F8C0625DF6770008D3D78 /* LaunchScreen.storyboard */; };
 		ED2F8C1325DF6770008D3D78 /* BookConfirmPossessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F8C1225DF6770008D3D78 /* BookConfirmPossessionTests.swift */; };
 		ED2F8C1E25DF6770008D3D78 /* BookConfirmPossessionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F8C1D25DF6770008D3D78 /* BookConfirmPossessionUITests.swift */; };
-		ED5A161B25E86859002A1035 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A161A25E86859002A1035 /* UIColorHex.swift */; };
 		ED5A162125E868B3002A1035 /* NeumorphismExtensionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A162025E868B3002A1035 /* NeumorphismExtensionButton.swift */; };
 		ED5A162A25E86917002A1035 /* NeumorphismButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A162925E86917002A1035 /* NeumorphismButton.swift */; };
 		ED5A163225E86B92002A1035 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5A163125E86B92002A1035 /* History.storyboard */; };
@@ -33,7 +32,7 @@
 		EDA2063E25EE18EB003A1555 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2063D25EE18EB003A1555 /* Global.swift */; };
 		EDB6A41E25ECAE39008A6259 /* NeumorphismView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A41D25ECAE39008A6259 /* NeumorphismView.swift */; };
 		EDB6A42625ECAF79008A6259 /* NeumorphismExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A42525ECAF79008A6259 /* NeumorphismExtensionView.swift */; };
-		EDB6A43425ECB72D008A6259 /* GetImageByURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A43325ECB72D008A6259 /* GetImageByURL.swift */; };
+		EDB6A43425ECB72D008A6259 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A43325ECB72D008A6259 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +69,6 @@
 		ED2F8C1D25DF6770008D3D78 /* BookConfirmPossessionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookConfirmPossessionUITests.swift; sourceTree = "<group>"; };
 		ED2F8C1F25DF6770008D3D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED2F8C3525DF6B4B008D3D78 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		ED5A161A25E86859002A1035 /* UIColorHex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
 		ED5A162025E868B3002A1035 /* NeumorphismExtensionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismExtensionButton.swift; sourceTree = "<group>"; };
 		ED5A162925E86917002A1035 /* NeumorphismButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismButton.swift; sourceTree = "<group>"; };
 		ED5A163125E86B92002A1035 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
@@ -87,7 +85,7 @@
 		EDA2063D25EE18EB003A1555 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		EDB6A41D25ECAE39008A6259 /* NeumorphismView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismView.swift; sourceTree = "<group>"; };
 		EDB6A42525ECAF79008A6259 /* NeumorphismExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismExtensionView.swift; sourceTree = "<group>"; };
-		EDB6A43325ECB72D008A6259 /* GetImageByURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageByURL.swift; sourceTree = "<group>"; };
+		EDB6A43325ECB72D008A6259 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,9 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				ED5A162025E868B3002A1035 /* NeumorphismExtensionButton.swift */,
-				ED5A161A25E86859002A1035 /* UIColorHex.swift */,
 				EDB6A42525ECAF79008A6259 /* NeumorphismExtensionView.swift */,
-				EDB6A43325ECB72D008A6259 /* GetImageByURL.swift */,
+				EDB6A43325ECB72D008A6259 /* Extensions.swift */,
 			);
 			name = Extension;
 			path = BookConfirmPossession/Extension;
@@ -382,12 +379,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED095CA325E867FD00C20182 /* TopViewController.swift in Sources */,
-				ED5A161B25E86859002A1035 /* UIColorHex.swift in Sources */,
 				ED7BE6FA25EBC435003EE161 /* ComicCheckAPI.swift in Sources */,
 				ED2F8BFC25DF676F008D3D78 /* AppDelegate.swift in Sources */,
 				ED5A162A25E86917002A1035 /* NeumorphismButton.swift in Sources */,
 				ED2F8BFE25DF676F008D3D78 /* SceneDelegate.swift in Sources */,
-				EDB6A43425ECB72D008A6259 /* GetImageByURL.swift in Sources */,
+				EDB6A43425ECB72D008A6259 /* Extensions.swift in Sources */,
 				ED7BE70725EBF490003EE161 /* ComicCheckResultViewController.swift in Sources */,
 				EDA2063E25EE18EB003A1555 /* Global.swift in Sources */,
 				ED88063525E8AA1300F793C7 /* ComicCheckViewController.swift in Sources */,
