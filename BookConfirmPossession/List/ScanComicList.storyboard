@@ -53,11 +53,10 @@
                             <constraint firstItem="RoB-dG-wRG" firstAttribute="top" secondItem="Jwb-Qi-q3x" secondAttribute="bottom" constant="28" id="wcC-2e-YQy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="リスト" id="Ox8-2i-Ttl">
-                        <barButtonItem key="rightBarButtonItem" title="選択" id="fxG-cX-85u"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="リスト" id="Ox8-2i-Ttl"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="scanComicListButton" destination="RoB-dG-wRG" id="kS7-1g-e1A"/>
                         <outlet property="scanComicListCollectionView" destination="Jwb-Qi-q3x" id="pot-YG-cdD"/>
                     </connections>
                 </viewController>
