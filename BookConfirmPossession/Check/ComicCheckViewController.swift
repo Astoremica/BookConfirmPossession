@@ -16,9 +16,7 @@ class ComicCheckViewController: UIViewController {
     
     var avCaptureSession: AVCaptureSession!
     var avPreviewLayer: AVCaptureVideoPreviewLayer!
-    
-    
-    var comic: [String: String] = [:]
+
     
     let global = Global()
     let comicCheck = ComicCheckAPI()
