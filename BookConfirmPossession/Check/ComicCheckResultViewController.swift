@@ -78,11 +78,9 @@ class ComicCheckResultViewController: UIViewController {
         }else{
             view.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
         }
-        
-        //        =================================
-        // 第一引数：keyword 検索したいワード
-        
-        // 本のISBN情報をURLエンコードする
+        // タイトル自動縮小
+        comicTitleLabel.adjustsFontSizeToFitWidth = true
+        comicTitleLabel.minimumScaleFactor = 0.5
         
         // リクエストURLの組み立て
         guard let req_url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(barCode)") else {
