@@ -40,8 +40,15 @@ extension String {
 /// UIViewController拡張(アラート)
 public extension UIViewController {
 
+    /// アラート
     func showAlert(title: String, message: String, actions: [UIAlertAction]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        actions.forEach { alert.addAction($0) }
+        present(alert, animated: true)
+    }
+    /// アクションシート
+    func showActionSheet(title: String, message: String, actions: [UIAlertAction]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
         actions.forEach { alert.addAction($0) }
         present(alert, animated: true)
     }
