@@ -32,8 +32,8 @@
                                             <constraint firstAttribute="height" constant="331" id="wcf-R8-rzr"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Alz-c5-ZyO">
-                                        <rect key="frame" x="105.33333333333334" y="400" width="79.333333333333343" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Alz-c5-ZyO">
+                                        <rect key="frame" x="10" y="400" width="270" height="30"/>
                                         <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -52,6 +52,7 @@
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Alz-c5-ZyO" secondAttribute="trailing" constant="10" id="5XS-0q-jW7"/>
                                     <constraint firstItem="SmB-z7-hWb" firstAttribute="centerX" secondItem="L72-he-af5" secondAttribute="centerX" id="Hdz-zS-BuI"/>
                                     <constraint firstItem="I0b-al-HHX" firstAttribute="top" secondItem="Alz-c5-ZyO" secondAttribute="bottom" constant="30" id="JOM-gG-NBJ"/>
                                     <constraint firstAttribute="width" constant="290" id="JPr-KS-fSr"/>
@@ -63,6 +64,7 @@
                                     <constraint firstItem="Alz-c5-ZyO" firstAttribute="top" secondItem="SmB-z7-hWb" secondAttribute="bottom" constant="15" id="ktx-QL-a3Z"/>
                                     <constraint firstAttribute="height" constant="500" id="oCJ-ha-gW3"/>
                                     <constraint firstItem="vZ5-7T-LO6" firstAttribute="top" secondItem="L72-he-af5" secondAttribute="top" constant="12" id="wBL-11-edJ"/>
+                                    <constraint firstItem="Alz-c5-ZyO" firstAttribute="leading" secondItem="L72-he-af5" secondAttribute="leading" constant="10" id="xU5-Uw-BQP"/>
                                     <constraint firstItem="j2q-wT-92c" firstAttribute="leading" secondItem="L72-he-af5" secondAttribute="leading" constant="40" id="y1t-jK-jg3"/>
                                 </constraints>
                             </view>
