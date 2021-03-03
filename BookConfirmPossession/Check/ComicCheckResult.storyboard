@@ -103,7 +103,13 @@
                             <constraint firstItem="L72-he-af5" firstAttribute="top" secondItem="NNT-VO-tRI" secondAttribute="top" constant="20" id="wLu-c3-dA7"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UUR-e0-S1h"/>
+                    <navigationItem key="navigationItem" id="UUR-e0-S1h">
+                        <barButtonItem key="rightBarButtonItem" title="リスト" id="DDe-2r-T9z">
+                            <connections>
+                                <segue destination="hdM-KL-fXq" kind="show" id="cG2-9q-FFT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="anotherComicButton" destination="W7N-hn-y9K" id="SRh-n1-Urm"/>
@@ -117,6 +123,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jPm-QZ-kVx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="938.46153846153845" y="86.729857819905206"/>
+        </scene>
+        <!--ScanComicList-->
+        <scene sceneID="5nF-O9-FZA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ScanComicList" id="hdM-KL-fXq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NM1-DF-DMh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pev-Dv-x4W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1685" y="87"/>
         </scene>
     </scenes>
     <designables>

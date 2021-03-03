@@ -10,6 +10,10 @@
 		ED095CA225E867FD00C20182 /* Top.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED095C9925E867FD00C20182 /* Top.strings */; };
 		ED095CA325E867FD00C20182 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED095C9B25E867FD00C20182 /* TopViewController.swift */; };
 		ED095CA425E867FD00C20182 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED095C9C25E867FD00C20182 /* Top.storyboard */; };
+		ED106F7025EFA753006EAE92 /* ScanComicList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED106F6F25EFA753006EAE92 /* ScanComicList.storyboard */; };
+		ED106F8025EFA79B006EAE92 /* ScanComicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED106F7F25EFA79B006EAE92 /* ScanComicListViewController.swift */; };
+		ED106F8C25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED106F8A25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift */; };
+		ED106F8D25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED106F8B25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.xib */; };
 		ED2F8BFC25DF676F008D3D78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F8BFB25DF676F008D3D78 /* AppDelegate.swift */; };
 		ED2F8BFE25DF676F008D3D78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F8BFD25DF676F008D3D78 /* SceneDelegate.swift */; };
 		ED2F8C0525DF6770008D3D78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2F8C0425DF6770008D3D78 /* Assets.xcassets */; };
@@ -56,6 +60,10 @@
 		ED095C9A25E867FD00C20182 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Top.strings; sourceTree = "<group>"; };
 		ED095C9B25E867FD00C20182 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		ED095C9D25E867FD00C20182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Top.storyboard; sourceTree = "<group>"; };
+		ED106F6F25EFA753006EAE92 /* ScanComicList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanComicList.storyboard; sourceTree = "<group>"; };
+		ED106F7F25EFA79B006EAE92 /* ScanComicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanComicListViewController.swift; sourceTree = "<group>"; };
+		ED106F8A25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanComicListCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED106F8B25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanComicListCollectionViewCell.xib; sourceTree = "<group>"; };
 		ED2F8BF825DF676F008D3D78 /* BookConfirmPossession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookConfirmPossession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2F8BFB25DF676F008D3D78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED2F8BFD25DF676F008D3D78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +124,10 @@
 		ED095C9725E867FD00C20182 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				ED106F6F25EFA753006EAE92 /* ScanComicList.storyboard */,
+				ED106F7F25EFA79B006EAE92 /* ScanComicListViewController.swift */,
+				ED106F8A25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift */,
+				ED106F8B25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.xib */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -346,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED88062625E8A62300F793C7 /* HistoryDetail.storyboard in Resources */,
+				ED106F8D25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.xib in Resources */,
 				ED095CA425E867FD00C20182 /* Top.storyboard in Resources */,
 				ED7BE70225EBF464003EE161 /* ComicCheckResult.storyboard in Resources */,
 				ED2F8C0825DF6770008D3D78 /* LaunchScreen.storyboard in Resources */,
@@ -354,6 +367,7 @@
 				ED88063025E8A9A500F793C7 /* ComicCheck.storyboard in Resources */,
 				ED5A163225E86B92002A1035 /* History.storyboard in Resources */,
 				ED095CA225E867FD00C20182 /* Top.strings in Resources */,
+				ED106F7025EFA753006EAE92 /* ScanComicList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +397,9 @@
 				ED2F8BFC25DF676F008D3D78 /* AppDelegate.swift in Sources */,
 				ED5A162A25E86917002A1035 /* NeumorphismButton.swift in Sources */,
 				ED2F8BFE25DF676F008D3D78 /* SceneDelegate.swift in Sources */,
+				ED106F8025EFA79B006EAE92 /* ScanComicListViewController.swift in Sources */,
 				EDB6A43425ECB72D008A6259 /* Extensions.swift in Sources */,
+				ED106F8C25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift in Sources */,
 				ED7BE70725EBF490003EE161 /* ComicCheckResultViewController.swift in Sources */,
 				EDA2063E25EE18EB003A1555 /* Global.swift in Sources */,
 				ED88063525E8AA1300F793C7 /* ComicCheckViewController.swift in Sources */,
