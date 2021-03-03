@@ -59,10 +59,7 @@ class ComicCheckResultViewController: UIViewController {
     var comicTitle:String?
     var comicCover:String?
     var comicPubdate:String?
-//    var getComicList : [[String:String]] = []
-    
-    // 書籍一覧用配列
-    //    var comicList:[[String?:String?]] = [[:]]
+
     
     override func viewDidLoad() {
         //        semaphore = DispatchSemaphore(value: 0)
@@ -71,7 +68,7 @@ class ComicCheckResultViewController: UIViewController {
         self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
         // ナビゲーションバーの影画像（境界線の画像）を空に設定
         self.navigationController!.navigationBar.shadowImage = UIImage()
-        // Do any additional setup after loading the view.
+        
         
         if traitCollection.userInterfaceStyle == .dark {
             view.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
@@ -104,9 +101,9 @@ class ComicCheckResultViewController: UIViewController {
                 // 受け取ったJSONデータをパース(解析)して格納
                 let json = try decoder.decode(ResultJson.self, from: data!)
                 if let comic = json.items![0].volumeInfo{
-                    self.comicTitle = comic.title!
-                    self.comicCover = comic.imageLinks?.smallThumbnail
-                    self.comicPubdate = comic.publishedDate
+                    self.comicTitle = comic.title ?? ""
+                    self.comicCover = comic.imageLinks?.smallThumbnail ?? ""
+                    self.comicPubdate = comic.publishedDate ?? ""
                 }
                 if self.comicTitle != ""{
                     self.comicTitleLabel.text = self.comicTitle
