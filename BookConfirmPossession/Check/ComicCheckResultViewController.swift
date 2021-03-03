@@ -114,9 +114,11 @@ class ComicCheckResultViewController: UIViewController {
                 if self.comicCover != ""{
                     self.comicCoverImageView.downloaded(from:self.comicCover!)
                 }else{
-                    self.comicCoverImageView.image = UIImage(named: "notFoundCover")
+                    // GoogleBooksAPIで表紙が入手できなかった場合の手段
+                    self.comicCover = "https://cover.openbd.jp/\(barCode).jpg"
+                    self.comicCoverImageView.downloaded(from:self.comicCover!)
                 }
-                self.global.comic = ["title":self.comicTitle ?? "","pubdate":self.comicPubdate ?? "","cover":self.comicCover ?? ""]
+                self.global.comic = ["title":self.comicTitle ?? "","pubdate":self.comicPubdate ?? "","cover":self.comicCover!]
                 
             } catch {
                 // エラー処理
