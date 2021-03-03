@@ -12,7 +12,7 @@ import UIKit
 class ComicCheckResultViewController: UIViewController {
     
     let global = Global()
-    
+    let userDefaults = UserDefaults.standard
     // 読み込んだISBNコード用
     var barCode : String = ""
     
@@ -59,7 +59,10 @@ class ComicCheckResultViewController: UIViewController {
     var comicTitle:String?
     var comicCover:String?
     var comicPubdate:String?
+//    var getComicList : [[String:String]] = []
     
+    // 書籍一覧用配列
+    //    var comicList:[[String?:String?]] = [[:]]
     
     override func viewDidLoad() {
         //        semaphore = DispatchSemaphore(value: 0)
@@ -92,7 +95,7 @@ class ComicCheckResultViewController: UIViewController {
         // データ転送を管理するためのセッションを生成
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         // リクエストをタスクとして登録
-        let task = session.dataTask(with: req, completionHandler: {
+        let task = session.dataTask(with: req, completionHandler: { [self]
             (data , response , error) in
             // セッションを終了
             session.finishTasksAndInvalidate()
@@ -114,12 +117,11 @@ class ComicCheckResultViewController: UIViewController {
                     self.comicTitleLabel.text = "取得できませんでした。"
                 }
                 if self.comicCover != ""{
-                    print(self.comicCover as Any)
                     self.comicCoverImageView.downloaded(from:self.comicCover!)
                 }else{
                     self.comicCoverImageView.image = UIImage(named: "notFoundCover")
                 }
-                self.global.comic = ["title":self.comicTitle,"pubdate":self.comicPubdate,"cover":self.comicCover]
+                self.global.comic = ["title":self.comicTitle ?? "","pubdate":self.comicPubdate ?? "","cover":self.comicCover ?? ""]
                 
             } catch {
                 // エラー処理
@@ -131,13 +133,20 @@ class ComicCheckResultViewController: UIViewController {
         
     }
     
-    
     @IBAction func addAnotherComicButtonAction(_ sender: Any) {
-        // スキャン情報をマンガ一覧用の配列に追加
-        global.comicList.append(global.comic)
+        
+        
+        if var getComicList = userDefaults.array(forKey: "comics") as? [[String:String]] {
+            print(type(of: getComicList))
+            print(getComicList)
+            getComicList.append(global.comic)
+            userDefaults.set(getComicList, forKey: "comics")
+        }else{
+            let getComicList :[[String:String]] = [global.comic]
+            userDefaults.set(getComicList, forKey: "comics")
+        }
         // スキャンした書籍情報を初期化
         global.comic.removeAll()
-        print(global.comicList)
         // 読みとり画面へ戻る
         self.navigationController?.popViewController(animated: true)
     }
