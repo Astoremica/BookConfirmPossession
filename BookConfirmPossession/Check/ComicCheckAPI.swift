@@ -14,7 +14,7 @@ class ComicCheckAPI {
     // 検索メソッド
     func searchComic(code:String){
         
-        let global = Global()
+//        let global = Global()
 //        let semaphore = DispatchSemaphore(value: 0)
 //        
 //        // let userDefaults = UserDefaults.standard

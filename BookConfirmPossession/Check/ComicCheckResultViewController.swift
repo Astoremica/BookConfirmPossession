@@ -12,12 +12,35 @@ import UIKit
 class ComicCheckResultViewController: UIViewController {
     
     let global = Global()
-    let comicCheck = ComicCheckAPI()
-    
-    var comic: [String: String] = [:]
     
     // 読み込んだISBNコード用
     var barCode : String = ""
+    
+    // imageLinkのデータ構造
+    struct  ImageLinkJson: Codable {
+        let smallThumbnail: String?
+    }
+    // JSONのItem内のデータ構造
+    struct VolumeInfoJson: Codable {
+        // 本の名称
+        let title: String?
+        // 著者
+        let publishedDate : String?
+        // 本の画像
+        let imageLinks: ImageLinkJson?
+    }
+    // Jsonのitem内のデータ構造
+    struct ItemJson: Codable {
+        let volumeInfo: VolumeInfoJson?
+    }
+    
+    // JSONのデータ構造
+    struct ResultJson: Codable {
+        // 複数要素
+        let kind: String?
+        let items: [ItemJson]?
+    }
+    
     
     // 購入したかどうか
     @IBOutlet weak var checkResultLabel: UILabel!
@@ -33,7 +56,9 @@ class ComicCheckResultViewController: UIViewController {
     @IBOutlet weak var anotherComicButton: NeumorphismButton!
     
     
-    var semaphore : DispatchSemaphore!
+    var comicTitle:String?
+    var comicCover:String?
+    var comicPubdate:String?
     
     
     override func viewDidLoad() {
@@ -51,134 +76,68 @@ class ComicCheckResultViewController: UIViewController {
             view.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
         }
         
-        //                let semaphore = DispatchSemaphore(value: 0)
-        
-        // let userDefaults = UserDefaults.standard
-        // リクエストURL組み立て
-        let url: URL = URL(string: "https://api.openbd.jp/v1/get?isbn=\(barCode)")!
         //        =================================
-        print(url)
-        let task: URLSessionTask = URLSession.shared.dataTask(with: url, completionHandler: {(data, response, error) in
-            do  {
-                //        // リクエストに必要な情報を生成
-                //        let req = URLRequest(url: req_url)
-                //        // データ転送を管理するためのセッションを生成
-                //        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-                //        // リクエストをタスクとして登録
-                //        print("a")
-                //        let task = session.dataTask(with: req,completionHandler: {
-                //            (data,response,error) in
-                //            print("c")
-                //            // セッション終了
-                //            session.finishTasksAndInvalidate()
-                //            // do try catch　エラーハンドリング
-                //            do{
-                print("d")
-                let jsonArray = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! [Any]
-                
-                DispatchQueue.main.async {
-                    let jsonData = jsonArray.map { (jsonData) -> [String: Any] in
-                        return jsonData as! [String: Any]
-                    }
-                    let summaryData = jsonData[0]["summary"].map { (summaryData) -> [String: Any] in
-                        return summaryData as! [String: Any]
-                    }
-                    
-                    //                let mode = userDefaults.string(forKey: "mode")
-                    let title = summaryData!["title"] as! String
-                    let pubdate = summaryData!["pubdate"] as! String
-                    let cover = summaryData!["cover"] as! String
-                    
-                    // 読み取った書籍の情報
-                    
-                    self.global.comic =  ["title" : title , "pubdate" : pubdate , "cover" : cover ]
-                    if title != ""{
-                        // タイトル
-                        self.comicTitleLabel.text = title
-                    }else{
-                        self.comicTitleLabel.text = "取得できませんでした。"
-                    }
-                    // 表紙　なければNotFound画像
-                    if cover != ""{
-                        self.comicCoverImageView.downloaded(from:cover)
-                    }else{
-                        self.comicCoverImageView.image = UIImage(named: "notFoundCover")
-                        
-                    }
-                    //                self.semaphore.signal()
+        // 第一引数：keyword 検索したいワード
+        
+        // 本のISBN情報をURLエンコードする
+        
+        // リクエストURLの組み立て
+        guard let req_url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(barCode)") else {
+            return
+        }
+        print(req_url)
+        
+        // リクエストに必要な情報を生成
+        let req = URLRequest(url: req_url)
+        // データ転送を管理するためのセッションを生成
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        // リクエストをタスクとして登録
+        let task = session.dataTask(with: req, completionHandler: {
+            (data , response , error) in
+            // セッションを終了
+            session.finishTasksAndInvalidate()
+            // do try catch エラーハンドリング
+            do {
+                //JSONDecoderのインスタンス取得
+                let decoder = JSONDecoder()
+                // 受け取ったJSONデータをパース(解析)して格納
+                let json = try decoder.decode(ResultJson.self, from: data!)
+                if let comic = json.items![0].volumeInfo{
+                    self.comicTitle = comic.title!
+                    self.comicCover = comic.imageLinks?.smallThumbnail
+                    self.comicPubdate = comic.publishedDate
                 }
+                if self.comicTitle != ""{
+                    self.comicTitleLabel.text = self.comicTitle
+                    
+                }else{
+                    self.comicTitleLabel.text = "取得できませんでした。"
+                }
+                if self.comicCover != ""{
+                    print(self.comicCover as Any)
+                    self.comicCoverImageView.downloaded(from:self.comicCover!)
+                }else{
+                    self.comicCoverImageView.image = UIImage(named: "notFoundCover")
+                }
+                self.global.comic = ["title":self.comicTitle,"pubdate":self.comicPubdate,"cover":self.comicCover]
                 
-            }catch let error {
+            } catch {
+                // エラー処理
                 print(error)
             }
-            //                    semaphore.signal()
         })
-        print("start")
+        // ダウンロード開始
         task.resume()
-        //        semaphore.wait()
-        
-        
-        
-        
-        
-        //        self.comicCheck.searchComic(code: self.barCode)
-        
-        
-        
-        
-        //        if let title =  comic["title"]{
-        //            // タイトル
-        //            comicTitleLabel.text = title
-        //        }else{
-        //            comicTitleLabel.text = "取得できませんでした。"
-        //        }
-        //        // 表紙　なければNotFound画像
-        //        if let cover = comic["cover"]{
-        //            comicCoverImageView.downloaded(from:cover)
-        //        }else{
-        //            comicCoverImageView.image = UIImage(named: "notFoundCover")
-        //
-        //        }
-        
-        //        let code:String = UserDefaults.standard.string(forKey: "barcode")!
-        //
-        //        let semaphore = DispatchSemaphore(value: 0)
-        //        if let mode = userDefaults.string(forKey: "mode"){
-        //            print("aaa")
-        //            comicCheck.searchComic(code: code,mode: mode)
-        //            semaphore.signal()
-        //        }
-        //        semaphore.wait()
-        //        let comicArray = UserDefaults.standard.object(forKey: "comic") as? [String:String] ?? [String:String]
-        //        let comic = (title: comicArray["title"], pubdate: comicArray["pubdate"], cover: comicArray["cover"])
-        //
-        //        print("bbb")
-        //
-        //        comicTitleLabel.text = comic.title
-        //        print(comic.cover)
-        //        if comic.cover != "" {
-        //            comicCoverImageView.downloaded(from:comic.cover)
-        //        }else{
-        //            comicCoverImageView.image = UIImage(named: "notFoundCover")
-        //        }
-        //
-        //        let checkmode = "add"
-        //        userDefaults.set(checkmode, forKey: "mode")
-        //        userDefaults.synchronize()
-        //
-        //
-        //
-        //
-        //
         
     }
     
     
     @IBAction func addAnotherComicButtonAction(_ sender: Any) {
         // スキャン情報をマンガ一覧用の配列に追加
-        global.comicList.append(comic)
+        global.comicList.append(global.comic)
         // スキャンした書籍情報を初期化
-        comic.removeAll()
+        global.comic.removeAll()
+        print(global.comicList)
         // 読みとり画面へ戻る
         self.navigationController?.popViewController(animated: true)
     }

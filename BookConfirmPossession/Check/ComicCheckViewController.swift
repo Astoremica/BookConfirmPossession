@@ -16,9 +16,7 @@ class ComicCheckViewController: UIViewController {
     
     var avCaptureSession: AVCaptureSession!
     var avPreviewLayer: AVCaptureVideoPreviewLayer!
-    
-    
-    var comic: [String: String] = [:]
+
     
     let global = Global()
     let comicCheck = ComicCheckAPI()
@@ -153,15 +151,7 @@ extension ComicCheckViewController : AVCaptureMetadataOutputObjectsDelegate {
             let start = code.startIndex
             
             if code[start] == "9" {
-                //                ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-                
-                
-                
-                
-                
-                
-                //                ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
-                
+
                 
                 let storyboard: UIStoryboard = UIStoryboard(name: "ComicCheckResult", bundle: nil)//遷移先のStoryboardを設定
                 let nextView = storyboard.instantiateViewController(withIdentifier: "comicCheckResult") as! ComicCheckResultViewController

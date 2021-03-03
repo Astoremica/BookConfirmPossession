@@ -8,9 +8,9 @@
 class Global {
 
     // 読み取った書籍の情報
-    var comic: [String: String] = [:]
+    var comic: [String?: String?] = [:]
     // 書籍一覧用配列
-    var comicList:[[String:String]] = [[:]]
+    var comicList:[[String?:String?]] = [[:]]
 
 
 }
