@@ -23,7 +23,6 @@
 		ED5A162125E868B3002A1035 /* NeumorphismExtensionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A162025E868B3002A1035 /* NeumorphismExtensionButton.swift */; };
 		ED5A162A25E86917002A1035 /* NeumorphismButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A162925E86917002A1035 /* NeumorphismButton.swift */; };
 		ED5A163225E86B92002A1035 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5A163125E86B92002A1035 /* History.storyboard */; };
-		ED7BE6FA25EBC435003EE161 /* ComicCheckAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE6F925EBC435003EE161 /* ComicCheckAPI.swift */; };
 		ED7BE70225EBF464003EE161 /* ComicCheckResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7BE70125EBF464003EE161 /* ComicCheckResult.storyboard */; };
 		ED7BE70725EBF490003EE161 /* ComicCheckResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE70625EBF490003EE161 /* ComicCheckResultViewController.swift */; };
 		ED88060225E88D2F00F793C7 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88060125E88D2F00F793C7 /* HistoryViewController.swift */; };
@@ -37,6 +36,7 @@
 		EDB6A41E25ECAE39008A6259 /* NeumorphismView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A41D25ECAE39008A6259 /* NeumorphismView.swift */; };
 		EDB6A42625ECAF79008A6259 /* NeumorphismExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A42525ECAF79008A6259 /* NeumorphismExtensionView.swift */; };
 		EDB6A43425ECB72D008A6259 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A43325ECB72D008A6259 /* Extensions.swift */; };
+		EDEB03BD25F1471300D32EAD /* ComicCheckAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB03BC25F1471300D32EAD /* ComicCheckAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,6 @@
 		ED5A162025E868B3002A1035 /* NeumorphismExtensionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismExtensionButton.swift; sourceTree = "<group>"; };
 		ED5A162925E86917002A1035 /* NeumorphismButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismButton.swift; sourceTree = "<group>"; };
 		ED5A163125E86B92002A1035 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
-		ED7BE6F925EBC435003EE161 /* ComicCheckAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCheckAPI.swift; sourceTree = "<group>"; };
 		ED7BE70125EBF464003EE161 /* ComicCheckResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicCheckResult.storyboard; sourceTree = "<group>"; };
 		ED7BE70625EBF490003EE161 /* ComicCheckResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCheckResultViewController.swift; sourceTree = "<group>"; };
 		ED88060125E88D2F00F793C7 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +93,7 @@
 		EDB6A41D25ECAE39008A6259 /* NeumorphismView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismView.swift; sourceTree = "<group>"; };
 		EDB6A42525ECAF79008A6259 /* NeumorphismExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismExtensionView.swift; sourceTree = "<group>"; };
 		EDB6A43325ECB72D008A6259 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EDEB03BC25F1471300D32EAD /* ComicCheckAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicCheckAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,9 +145,9 @@
 		ED095CA025E867FD00C20182 /* Check */ = {
 			isa = PBXGroup;
 			children = (
+				EDEB03BC25F1471300D32EAD /* ComicCheckAPI.swift */,
 				ED88062F25E8A9A500F793C7 /* ComicCheck.storyboard */,
 				ED88063425E8AA1300F793C7 /* ComicCheckViewController.swift */,
-				ED7BE6F925EBC435003EE161 /* ComicCheckAPI.swift */,
 				ED7BE70125EBF464003EE161 /* ComicCheckResult.storyboard */,
 				ED7BE70625EBF490003EE161 /* ComicCheckResultViewController.swift */,
 			);
@@ -393,12 +393,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED095CA325E867FD00C20182 /* TopViewController.swift in Sources */,
-				ED7BE6FA25EBC435003EE161 /* ComicCheckAPI.swift in Sources */,
 				ED2F8BFC25DF676F008D3D78 /* AppDelegate.swift in Sources */,
 				ED5A162A25E86917002A1035 /* NeumorphismButton.swift in Sources */,
 				ED2F8BFE25DF676F008D3D78 /* SceneDelegate.swift in Sources */,
 				ED106F8025EFA79B006EAE92 /* ScanComicListViewController.swift in Sources */,
 				EDB6A43425ECB72D008A6259 /* Extensions.swift in Sources */,
+				EDEB03BD25F1471300D32EAD /* ComicCheckAPI.swift in Sources */,
 				ED106F8C25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift in Sources */,
 				ED7BE70725EBF490003EE161 /* ComicCheckResultViewController.swift in Sources */,
 				EDA2063E25EE18EB003A1555 /* Global.swift in Sources */,

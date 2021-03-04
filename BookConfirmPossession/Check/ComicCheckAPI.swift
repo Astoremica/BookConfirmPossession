@@ -1,21 +1,20 @@
+////
+////  ComicCheckAPI.swift
+////  BookConfirmPossession
+////
+////  Created by YoNa on 2021/02/28.
+////
+//import  UIKit
 //
-//  ComicCheckAPI.swift
-//  BookConfirmPossession
 //
-//  Created by YoNa on 2021/02/28.
 //
-import  UIKit
-
-
-
-class ComicCheckAPI {
-    
-    
-    // 検索メソッド
-    func searchComic(code:String){
-        
+//class ComicCheckAPI {
+//    
+//    
+//    // 検索メソッド
+//    func searchComic(code:String){
+//        
 //        let global = Global()
-//        let semaphore = DispatchSemaphore(value: 0)
 //        
 //        // let userDefaults = UserDefaults.standard
 //        // リクエストURL組み立て
@@ -43,15 +42,13 @@ class ComicCheckAPI {
 //                }
 //                //                let mode = userDefaults.string(forKey: "mode")
 //                let title = summaryData!["title"] as! String
-//                let pubdate = summaryData!["pubdate"] as! String
-//                let cover = summaryData!["cover"] as! String
 //                
 //                // 読み取った書籍の情報
 //                
-//                global.comic =  ["title" : title , "pubdate" : pubdate , "cover" : cover ]
+//                global.comicTitle = title
 //                
 //                
-//                semaphore.signal()
+//                
 //            
 //                
 //            }catch let error {
@@ -60,11 +57,11 @@ class ComicCheckAPI {
 //        })
 //
 //        task.resume()
-//        semaphore.wait()
-    
-    }
-    
-    
-    
-}
-
+//        
+//    
+//    }
+//    
+//    
+//    
+//}
+//
