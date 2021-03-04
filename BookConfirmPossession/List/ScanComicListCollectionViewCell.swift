@@ -19,6 +19,14 @@ class ScanComicListCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    override var isSelected: Bool{
+        didSet{
+            if isEditing {
+                selectLabel.text = isSelected ? "✓" : ""
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,4 +38,8 @@ class ScanComicListCollectionViewCell: UICollectionViewCell {
         selectLabel.layer.backgroundColor = UIColor.black.withAlphaComponent(0.5).cgColor
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        selectLabel.isHidden = !isEditing
+    }
 }

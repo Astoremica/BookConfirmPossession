@@ -16,15 +16,19 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     // スキャンリストUICollectionView
     @IBOutlet weak var scanComicListCollectionView: UICollectionView!
     
-    @IBOutlet weak var scanComicListButton: NeumorphismButton!
+    @IBOutlet weak var scanComicListBuyButton: NeumorphismButton!
+
+    @IBOutlet weak var scanComicListDeleteButton: NeumorphismButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // 選択ボタン
         navigationItem.rightBarButtonItem = editButtonItem
         navigationItem.rightBarButtonItem?.title = "選択"
         // ボタン
-        scanComicListButton.setTitle("買う", for: .normal)
-        scanComicListButton.setTitleColor(UIColor(hex: "4966FF"), for: .normal)
+        scanComicListBuyButton.setTitleColor(UIColor(hex: "4966FF"), for: .normal)
+        scanComicListDeleteButton.setTitleColor(UIColor(hex: "FF6363"), for: .normal)
+        
         
         if traitCollection.userInterfaceStyle == .dark {
             view.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
@@ -67,7 +71,8 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView,didSelectItemAt indexPath: IndexPath) {
         if !isEditing{
-            print(indexPath.row)
+            let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
+            print(getComicList![indexPath.row])
         }
         
     }
@@ -75,21 +80,44 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         scanComicListCollectionView.allowsMultipleSelection = editing
+        scanComicListBuyButton.isHidden = editing
+        
+        scanComicListDeleteButton.isHidden = !editing
+        // 完了ボタン時に選択を消す。
+        scanComicListCollectionView.indexPathsForSelectedItems?.forEach({(indexpath) in
+            scanComicListCollectionView.deselectItem(at: indexpath, animated: false)
+        })
         scanComicListCollectionView.indexPathsForVisibleItems.forEach{(indexPath) in
             let cell = scanComicListCollectionView.cellForItem(at: indexPath) as! ScanComicListCollectionViewCell
             cell.isEditing = editing
              
         }
-        if editing {
-            scanComicListButton.setTitle("削除", for: .normal)
-            scanComicListButton.setTitleColor(UIColor(hex: "FF6363"), for: .normal)
-        }else{
-            scanComicListButton.setTitle("買う", for: .normal)
-            scanComicListButton.setTitleColor(UIColor(hex: "4966FF"), for: .normal)
+//        // ボタンの変更
+//        if editing {
+//            scanComicListBuyButton.setTitle("削除", for: .normal)
+//            scanComicListBuyButton.setTitleColor(UIColor(hex: "FF6363"), for: .normal)
+//        }else{
+//            scanComicListBuyButton.setTitle("買う", for: .normal)
+//            scanComicListBuyButton.setTitleColor(UIColor(hex: "4966FF"), for: .normal)
+//        }
+    }
+    @IBAction func deleteSelectedComics(_ sender: Any) {
+        print("削除")
+        var getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
+        if let selectedComics = scanComicListCollectionView.indexPathsForSelectedItems{
+            let index = selectedComics.map{$0[1]}.sorted().reversed()
+            for indexpath in index {
+                getComicList?.remove(at: indexpath)
+            }
+            userDefaults.set(getComicList,forKey: "comics")
+            scanComicListCollectionView.deleteItems(at: selectedComics)
         }
     }
     
-
+    @IBAction func buySelectedComics(_ sender: Any) {
+        print("買う")
+    }
+    
     
 //    @IBAction func listChangeMode(_ sender: Any) {
 //        if scanComicListCollectionView.isEditing == true{

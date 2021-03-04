@@ -31,24 +31,43 @@
                                     <outlet property="delegate" destination="nbj-cA-OIo" id="Mfs-Rt-bIw"/>
                                 </connections>
                             </collectionView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFe-de-a5S" customClass="NeumorphismButton" customModule="BookConfirmPossession" customModuleProvider="target">
+                                <rect key="frame" x="38" y="695" width="314" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="PNp-58-IdN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
+                                <state key="normal" title="削除"/>
+                                <connections>
+                                    <action selector="deleteSelectedComics:" destination="nbj-cA-OIo" eventType="touchUpInside" id="GOh-A8-UPq"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoB-dG-wRG" customClass="NeumorphismButton" customModule="BookConfirmPossession" customModuleProvider="target">
                                 <rect key="frame" x="38" y="695" width="314" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="S8M-YO-zPK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="買う"/>
+                                <connections>
+                                    <action selector="buySelectedComics:" destination="nbj-cA-OIo" eventType="touchUpInside" id="YFV-fO-jVb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uFn-DF-bJy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uFn-DF-bJy" firstAttribute="trailing" secondItem="RoB-dG-wRG" secondAttribute="trailing" constant="38" id="0ji-I0-Td9"/>
+                            <constraint firstItem="DFe-de-a5S" firstAttribute="centerX" secondItem="AX1-dJ-YKI" secondAttribute="centerX" id="3zB-U8-qBS"/>
+                            <constraint firstItem="DFe-de-a5S" firstAttribute="leading" secondItem="uFn-DF-bJy" secondAttribute="leading" constant="38" id="6Zz-Tu-yoF"/>
                             <constraint firstItem="RoB-dG-wRG" firstAttribute="centerX" secondItem="AX1-dJ-YKI" secondAttribute="centerX" id="72v-MO-9bD"/>
                             <constraint firstItem="uFn-DF-bJy" firstAttribute="bottom" secondItem="RoB-dG-wRG" secondAttribute="bottom" constant="55" id="DOn-fk-Jd9"/>
+                            <constraint firstItem="uFn-DF-bJy" firstAttribute="bottom" secondItem="DFe-de-a5S" secondAttribute="bottom" constant="55" id="Ked-wS-8SZ"/>
                             <constraint firstItem="RoB-dG-wRG" firstAttribute="leading" secondItem="uFn-DF-bJy" secondAttribute="leading" constant="38" id="NWY-WU-wgW"/>
+                            <constraint firstItem="uFn-DF-bJy" firstAttribute="trailing" secondItem="DFe-de-a5S" secondAttribute="trailing" constant="38" id="OpE-pT-AVj"/>
                             <constraint firstItem="Jwb-Qi-q3x" firstAttribute="top" secondItem="uFn-DF-bJy" secondAttribute="top" id="StM-Rw-xKB"/>
                             <constraint firstItem="uFn-DF-bJy" firstAttribute="trailing" secondItem="Jwb-Qi-q3x" secondAttribute="trailing" id="iuA-j2-6Fz"/>
+                            <constraint firstItem="DFe-de-a5S" firstAttribute="top" secondItem="Jwb-Qi-q3x" secondAttribute="bottom" constant="28" id="lQb-gb-8ch"/>
                             <constraint firstItem="Jwb-Qi-q3x" firstAttribute="leading" secondItem="uFn-DF-bJy" secondAttribute="leading" id="wNo-YF-4ry"/>
                             <constraint firstItem="RoB-dG-wRG" firstAttribute="top" secondItem="Jwb-Qi-q3x" secondAttribute="bottom" constant="28" id="wcC-2e-YQy"/>
                         </constraints>
@@ -56,8 +75,9 @@
                     <navigationItem key="navigationItem" title="リスト" id="Ox8-2i-Ttl"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="scanComicListButton" destination="RoB-dG-wRG" id="kS7-1g-e1A"/>
+                        <outlet property="scanComicListBuyButton" destination="RoB-dG-wRG" id="rGd-1B-RRc"/>
                         <outlet property="scanComicListCollectionView" destination="Jwb-Qi-q3x" id="pot-YG-cdD"/>
+                        <outlet property="scanComicListDeleteButton" destination="DFe-de-a5S" id="h89-oA-5cU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uR-34-sg6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -66,8 +86,11 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="DFe-de-a5S">
+            <size key="intrinsicContentSize" width="60" height="42"/>
+        </designable>
         <designable name="RoB-dG-wRG">
-            <size key="intrinsicContentSize" width="100" height="42"/>
+            <size key="intrinsicContentSize" width="60" height="42"/>
         </designable>
     </designables>
     <resources>
