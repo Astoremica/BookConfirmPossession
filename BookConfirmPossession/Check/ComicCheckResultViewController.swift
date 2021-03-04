@@ -108,7 +108,6 @@ class ComicCheckResultViewController: UIViewController {
                     // 情報が取得できない時
                     self.comicTitle =  "取得できませんでした"
                     Thread.sleep(forTimeInterval: 0.5)
-                    print(global.comicTitle)
                     self.comicCover = ""
                     self.comicPubdate =  "取得できませんでした"
                 }
@@ -120,7 +119,7 @@ class ComicCheckResultViewController: UIViewController {
                     self.comicCover = "https://cover.openbd.jp/\(barCode).jpg"
                     self.comicCoverImageView.downloaded(from:self.comicCover!)
                 }
-                global.comic = ["title":self.comicTitle ?? "","pubdate":self.comicPubdate ?? "","cover":self.comicCover!]
+                global.comic = ["title":self.comicTitle ?? "","pubdate":self.comicPubdate ?? "","cover":self.comicCover!,"isbnCode":barCode]
                 
                 if var getComicList = userDefaults.array(forKey: "comics") as? [[String:String]] {
                     print(type(of: getComicList))
