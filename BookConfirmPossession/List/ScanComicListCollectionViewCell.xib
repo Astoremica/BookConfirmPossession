@@ -23,15 +23,28 @@
                             <constraint firstAttribute="width" constant="143" id="QVA-ru-bHl"/>
                         </constraints>
                     </imageView>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDA-bt-ESZ">
+                        <rect key="frame" x="4" y="4" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="0eB-kp-Tvf"/>
+                            <constraint firstAttribute="width" constant="30" id="fbS-Ho-OFS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="25"/>
+                        <color key="textColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="ZDA-bt-ESZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="VBp-XQ-R9b"/>
                 <constraint firstItem="7RN-Iy-ANE" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="WBQ-5r-Nkb"/>
                 <constraint firstItem="7RN-Iy-ANE" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="XnQ-3j-XtC"/>
+                <constraint firstItem="ZDA-bt-ESZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="efC-K5-1xf"/>
             </constraints>
             <connections>
                 <outlet property="scanComicListCellImageView" destination="7RN-Iy-ANE" id="yLp-jU-nRM"/>
+                <outlet property="selectLabel" destination="ZDA-bt-ESZ" id="yjM-Ek-Vfe"/>
             </connections>
             <point key="canvasLocation" x="32.608695652173914" y="134.93303571428569"/>
         </collectionViewCell>
