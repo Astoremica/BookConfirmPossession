@@ -100,17 +100,18 @@ class ComicCheckResultViewController: UIViewController {
                 let decoder = JSONDecoder()
                 // 受け取ったJSONデータをパース(解析)して格納
                 let json = try decoder.decode(ResultJson.self, from: data!)
-                if let comic = json.items![0].volumeInfo{
+                if let comic = json.items?[0].volumeInfo{
                     self.comicTitle = comic.title ?? ""
                     self.comicCover = comic.imageLinks?.smallThumbnail ?? ""
                     self.comicPubdate = comic.publishedDate ?? ""
-                }
-                if self.comicTitle != ""{
-                    self.comicTitleLabel.text = self.comicTitle
-                    
                 }else{
-                    self.comicTitleLabel.text = "取得できませんでした。"
+                    // 情報が取得できない時
+                    self.comicTitle =  "取得できませんでした"
+                    Thread.sleep(forTimeInterval: 0.5)
+                    self.comicCover = ""
+                    self.comicPubdate =  "取得できませんでした"
                 }
+                self.comicTitleLabel.text = self.comicTitle
                 if self.comicCover != ""{
                     self.comicCoverImageView.downloaded(from:self.comicCover!)
                 }else{
@@ -118,7 +119,20 @@ class ComicCheckResultViewController: UIViewController {
                     self.comicCover = "https://cover.openbd.jp/\(barCode).jpg"
                     self.comicCoverImageView.downloaded(from:self.comicCover!)
                 }
-                self.global.comic = ["title":self.comicTitle ?? "","pubdate":self.comicPubdate ?? "","cover":self.comicCover!]
+                global.comic = ["title":self.comicTitle ?? "","pubdate":self.comicPubdate ?? "","cover":self.comicCover!,"isbnCode":barCode]
+                
+                if var getComicList = userDefaults.array(forKey: "comics") as? [[String:String]] {
+                    print(type(of: getComicList))
+                    print(getComicList)
+                    getComicList.append(global.comic)
+                    userDefaults.set(getComicList, forKey: "comics")
+                }else{
+                    let getComicList :[[String:String]] = [global.comic]
+                    userDefaults.set(getComicList, forKey: "comics")
+                    
+                }
+                // スキャンした書籍情報を初期化
+                global.comic.removeAll()
                 
             } catch {
                 // エラー処理
@@ -133,17 +147,17 @@ class ComicCheckResultViewController: UIViewController {
     @IBAction func addAnotherComicButtonAction(_ sender: Any) {
         
         
-        if var getComicList = userDefaults.array(forKey: "comics") as? [[String:String]] {
-            print(type(of: getComicList))
-            print(getComicList)
-            getComicList.append(global.comic)
-            userDefaults.set(getComicList, forKey: "comics")
-        }else{
-            let getComicList :[[String:String]] = [global.comic]
-            userDefaults.set(getComicList, forKey: "comics")
-        }
-        // スキャンした書籍情報を初期化
-        global.comic.removeAll()
+//        if var getComicList = userDefaults.array(forKey: "comics") as? [[String:String]] {
+//            print(type(of: getComicList))
+//            print(getComicList)
+//            getComicList.append(global.comic)
+//            userDefaults.set(getComicList, forKey: "comics")
+//        }else{
+//            let getComicList :[[String:String]] = [global.comic]
+//            userDefaults.set(getComicList, forKey: "comics")
+//        }
+//        // スキャンした書籍情報を初期化
+//        global.comic.removeAll()
         // 読みとり画面へ戻る
         self.navigationController?.popViewController(animated: true)
     }
@@ -157,5 +171,6 @@ class ComicCheckResultViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+
 }
 

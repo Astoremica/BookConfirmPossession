@@ -19,7 +19,6 @@ class ComicCheckViewController: UIViewController {
     
     
     let global = Global()
-    let comicCheck = ComicCheckAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
