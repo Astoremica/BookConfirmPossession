@@ -13,13 +13,15 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     let global = Global()
     let userDefaults = UserDefaults.standard
     let collectionLayout = UICollectionViewFlowLayout()
+    let functions = Functions()
+    
     
     
     // スキャンリストUICollectionView
     @IBOutlet weak var scanComicListCollectionView: UICollectionView!
     @IBOutlet weak var scanComicListBuyButton: NeumorphismButton!
     @IBOutlet weak var scanComicListDeleteButton: NeumorphismButton!
-    @IBOutlet weak var backTopButton: NeumorphismButton!
+    
     @IBOutlet weak var backCheckButton: NeumorphismButton!
     
     override func viewDidLoad() {
@@ -32,6 +34,7 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
         }else{
             print("無し")
             scanComicListBuyButton.isHidden = true
+            backCheckButton.isHidden = false
         }
         
         // ボタン
@@ -69,16 +72,11 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScanComicListCollectionViewCell", for: indexPath) as! ScanComicListCollectionViewCell
-            cell.scanComicListCellImageView.downloaded(from: getComicList[indexPath.row]["cover"]!)
-            cell.isEditing = isEditing
-            return cell
-        }else{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScanComicListCollectionViewCell", for: indexPath) as! ScanComicListCollectionViewCell
-            cell.backgroundColor = UIColor.red
-            return cell
-        }
+        let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScanComicListCollectionViewCell", for: indexPath) as! ScanComicListCollectionViewCell
+        cell.scanComicListCellImageView.downloaded(from: (getComicList?[indexPath.row]["cover"]!)!)
+        cell.isEditing = isEditing
+        return cell
         
     }
     
@@ -132,15 +130,8 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     @IBAction func buySelectedComics(_ sender: Any) {
         print("買う")
         var comic: [String: Any] = [:]
-        let f = DateFormatter()
-        f.timeStyle = .none
-        f.dateStyle = .short
-        f.locale = Locale(identifier: "ja_JP")
-        let now = Date()
-        print(f.string(from: now))
         do {
             let realm = try Realm()
-            print(Realm.Configuration.defaultConfiguration.fileURL!)
             let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
             getComicList.map{
                 for reco in $0{
@@ -150,7 +141,7 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
                         "comicInfo" :
                             ["comicTitle" : reco["title"],
                              "comicCover" : reco["cover"],
-                             "comicPurchaseDate" : f.string(from: now)]
+                             "comicPurchaseDate" : functions.getPurchaseDate()]
                     ]
                     let comic = Comics(value: comic)
                     
@@ -162,18 +153,20 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
         } catch {
             print(error)
         }
-        navigationItem.title = "履歴に追加しました"
-        navigationItem.hidesBackButton = true
-        navigationItem.rightBarButtonItem = nil
-        scanComicListBuyButton.isHidden = true
-        backTopButton.isHidden = false
         // 完了ページへ遷移
         
+        let storyboard: UIStoryboard = UIStoryboard(name: "ScanComicSaveCompleted", bundle: nil)//遷移先のStoryboardを設定
+        let nextView = storyboard.instantiateViewController(withIdentifier: "comicSaveCompleted") as! ScanComicSaveCompletedViewController
+        self.navigationController?.pushViewController(nextView, animated: true)
+        //        navigationItem.title = "履歴に追加しました"
+        //        navigationItem.hidesBackButton = true
+        //        navigationItem.rightBarButtonItem = nil
+        //        scanComicListBuyButton.isHidden = true
+        //        backTopButton.isHidden = false
+        
+        
     }
-    @IBAction func backTopButtonAction(_ sender: Any) {
-        userDefaults.removeObject(forKey: "comics")
-        self.navigationController?.popToRootViewController(animated: true)
-    }
+
     
     @IBAction func backCheckButtonAction(_ sender: Any) {
         let layere_number = navigationController!.viewControllers.count
