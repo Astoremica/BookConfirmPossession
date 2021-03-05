@@ -158,7 +158,7 @@ extension ComicCheckViewController : AVCaptureMetadataOutputObjectsDelegate {
                 self.navigationController?.pushViewController(nextView, animated: true)
                 
                 
-            }else{
+            }else if code[start] == "1"{
                 // もう一つ上のバーコード
                 let okAction = UIAlertAction(title: "OK", style: .default) { _ in
                     // OKボタンで再スキャン
@@ -166,22 +166,14 @@ extension ComicCheckViewController : AVCaptureMetadataOutputObjectsDelegate {
                 }
                 showAlert(title: "スキャンミスです", message: "もう一つ上のバーコードです", actions: [okAction])
                 
-                //                let width = self.view.bounds.width
-                //                let lineText = UILabel()
-                //                lineText.frame = CGRect(x:0, y: 280, width: width, height: 50)
-                //                lineText.text = "もう一つ上のバーコードです"
-                //                lineText.textAlignment = NSTextAlignment.center
-                //                lineText.textColor = UIColor.red
-                //                lineText.layer.backgroundColor = UIColor.white.cgColor
-                //                lineText.font = UIFont(name:"Hiragino Maru Gothic ProN W4", size: 24)
-                //                lineText.layer.backgroundColor = UIColor.clear.cgColor
-                //                self.view.addSubview(lineText)
-                
+            }else{
+                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    // OKボタンで再スキャン
+                    self.avCaptureSession.startRunning()
+                }
+                showAlert(title: "スキャンミスです", message: "本ではありません。", actions: [okAction])
             }
-            
         }
-        
-        //        dismiss(animated: true)
     }
 }
 //
