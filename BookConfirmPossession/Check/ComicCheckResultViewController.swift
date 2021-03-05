@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 @IBDesignable
 
 
@@ -13,6 +14,9 @@ class ComicCheckResultViewController: UIViewController {
     
     let global = Global()
     let userDefaults = UserDefaults.standard
+    let functions = Functions()
+    
+    
     // 読み込んだISBNコード用
     var barCode : String = ""
     
@@ -162,6 +166,41 @@ class ComicCheckResultViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func scanComicListBuyButton(_ sender: Any) {
+        var comic: [String: Any] = [:]
+        do {
+            let realm = try Realm()
+            let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
+            getComicList.map{
+                for reco in $0{
+                    print(reco["isbnCode"] as Any)
+                    comic = [
+                        "barBode" : reco["isbnCode"]!,
+                        "comicInfo" :
+                            ["comicTitle" : reco["title"],
+                             "comicCover" : reco["cover"],
+                             "comicPurchaseDate" : functions.getPurchaseDate()]
+                    ]
+                    let comic = Comics(value: comic)
+                    
+                    try! realm.write {
+                        realm.add(comic)
+                    }
+                }
+            }
+        } catch {
+            print(error)
+        }
+        let storyboard: UIStoryboard = UIStoryboard(name: "ScanComicSaveCompleted", bundle: nil)//遷移先のStoryboardを設定
+        let nextView = storyboard.instantiateViewController(withIdentifier: "comicSaveCompleted") as! ScanComicSaveCompletedViewController
+        self.navigationController?.pushViewController(nextView, animated: true)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "toScanComicList" {
+                let nextVC = segue.destination as! ScanComicListViewController
+                nextVC.fromPage = 0
+            }
+        }
     /*
      // MARK: - Navigation
      
