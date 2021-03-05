@@ -21,8 +21,9 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     @IBOutlet weak var scanComicListCollectionView: UICollectionView!
     @IBOutlet weak var scanComicListBuyButton: NeumorphismButton!
     @IBOutlet weak var scanComicListDeleteButton: NeumorphismButton!
-    
     @IBOutlet weak var backCheckButton: NeumorphismButton!
+    
+    var fromPage : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -170,8 +171,12 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     
     @IBAction func backCheckButtonAction(_ sender: Any) {
         let layere_number = navigationController!.viewControllers.count
+        if fromPage == 0 {
+            self.navigationController?.popToViewController(navigationController!.viewControllers[layere_number-3], animated: true)
+        }else{
+            self.navigationController?.popToViewController(navigationController!.viewControllers[layere_number-2], animated: true)
+        }
         
-        self.navigationController?.popToViewController(navigationController!.viewControllers[layere_number-3], animated: true)
     }
     
     /*

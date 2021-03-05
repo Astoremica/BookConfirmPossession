@@ -195,6 +195,12 @@ class ComicCheckResultViewController: UIViewController {
         let nextView = storyboard.instantiateViewController(withIdentifier: "comicSaveCompleted") as! ScanComicSaveCompletedViewController
         self.navigationController?.pushViewController(nextView, animated: true)
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "toScanComicList" {
+                let nextVC = segue.destination as! ScanComicListViewController
+                nextVC.fromPage = 0
+            }
+        }
     /*
      // MARK: - Navigation
      

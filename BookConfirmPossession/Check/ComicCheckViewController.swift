@@ -134,7 +134,12 @@ class ComicCheckViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "toScanComicList" {
+                let nextVC = segue.destination as! ScanComicListViewController
+                nextVC.fromPage = 1
+            }
+        }
 }
 extension ComicCheckViewController : AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {

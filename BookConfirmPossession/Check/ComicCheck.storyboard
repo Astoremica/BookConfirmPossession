@@ -22,7 +22,7 @@
                         <barButtonItem key="backBarButtonItem" title="読みとり" id="Gly-So-CZD"/>
                         <barButtonItem key="rightBarButtonItem" title="リスト" id="qMl-uf-SX9">
                             <connections>
-                                <segue destination="PMu-og-Gug" kind="show" id="ATD-Cv-hLk"/>
+                                <segue destination="PMu-og-Gug" kind="show" identifier="toScanComicList" id="ATD-Cv-hLk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
