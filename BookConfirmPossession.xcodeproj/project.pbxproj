@@ -31,8 +31,6 @@
 		ED7BE70225EBF464003EE161 /* ComicCheckResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7BE70125EBF464003EE161 /* ComicCheckResult.storyboard */; };
 		ED7BE70725EBF490003EE161 /* ComicCheckResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE70625EBF490003EE161 /* ComicCheckResultViewController.swift */; };
 		ED88060225E88D2F00F793C7 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88060125E88D2F00F793C7 /* HistoryViewController.swift */; };
-		ED88061225E8971700F793C7 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88061025E8971700F793C7 /* HistoryCollectionViewCell.swift */; };
-		ED88061325E8971700F793C7 /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED88061125E8971700F793C7 /* HistoryCollectionViewCell.xib */; };
 		ED88062625E8A62300F793C7 /* HistoryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED88062525E8A62300F793C7 /* HistoryDetail.storyboard */; };
 		ED88062B25E8A7C700F793C7 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88062A25E8A7C700F793C7 /* HistoryDetailViewController.swift */; };
 		ED88063025E8A9A500F793C7 /* ComicCheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED88062F25E8A9A500F793C7 /* ComicCheck.storyboard */; };
@@ -101,8 +99,6 @@
 		ED7BE70125EBF464003EE161 /* ComicCheckResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicCheckResult.storyboard; sourceTree = "<group>"; };
 		ED7BE70625EBF490003EE161 /* ComicCheckResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCheckResultViewController.swift; sourceTree = "<group>"; };
 		ED88060125E88D2F00F793C7 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		ED88061025E8971700F793C7 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		ED88061125E8971700F793C7 /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		ED88062525E8A62300F793C7 /* HistoryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryDetail.storyboard; sourceTree = "<group>"; };
 		ED88062A25E8A7C700F793C7 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
 		ED88062F25E8A9A500F793C7 /* ComicCheck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicCheck.storyboard; sourceTree = "<group>"; };
@@ -207,8 +203,6 @@
 			children = (
 				ED5A163125E86B92002A1035 /* History.storyboard */,
 				ED88060125E88D2F00F793C7 /* HistoryViewController.swift */,
-				ED88061025E8971700F793C7 /* HistoryCollectionViewCell.swift */,
-				ED88061125E8971700F793C7 /* HistoryCollectionViewCell.xib */,
 				ED88062525E8A62300F793C7 /* HistoryDetail.storyboard */,
 				ED88062A25E8A7C700F793C7 /* HistoryDetailViewController.swift */,
 			);
@@ -429,7 +423,6 @@
 				ED7BE70225EBF464003EE161 /* ComicCheckResult.storyboard in Resources */,
 				ED2F8C0825DF6770008D3D78 /* LaunchScreen.storyboard in Resources */,
 				ED2F8C0525DF6770008D3D78 /* Assets.xcassets in Resources */,
-				ED88061325E8971700F793C7 /* HistoryCollectionViewCell.xib in Resources */,
 				ED88063025E8A9A500F793C7 /* ComicCheck.storyboard in Resources */,
 				ED5A163225E86B92002A1035 /* History.storyboard in Resources */,
 				ED095CA225E867FD00C20182 /* Top.strings in Resources */,
@@ -577,7 +570,6 @@
 				ED88063525E8AA1300F793C7 /* ComicCheckViewController.swift in Sources */,
 				EDB6A42625ECAF79008A6259 /* NeumorphismExtensionView.swift in Sources */,
 				ED88062B25E8A7C700F793C7 /* HistoryDetailViewController.swift in Sources */,
-				ED88061225E8971700F793C7 /* HistoryCollectionViewCell.swift in Sources */,
 				EDB6A41E25ECAE39008A6259 /* NeumorphismView.swift in Sources */,
 				ED5A162125E868B3002A1035 /* NeumorphismExtensionButton.swift in Sources */,
 				ED88060225E88D2F00F793C7 /* HistoryViewController.swift in Sources */,

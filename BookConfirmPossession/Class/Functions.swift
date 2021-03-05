@@ -6,6 +6,8 @@
 //
 
 import UIKit
+
+
 class Functions {
     func getPurchaseDate() -> String {
         let f = DateFormatter()
@@ -16,4 +18,5 @@ class Functions {
         
         return f.string(from: now)
     }
+    
 }
