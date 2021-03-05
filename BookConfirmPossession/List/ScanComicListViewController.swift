@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ScanComicListViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -13,11 +14,12 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     let userDefaults = UserDefaults.standard
     let collectionLayout = UICollectionViewFlowLayout()
     
+    
     // スキャンリストUICollectionView
     @IBOutlet weak var scanComicListCollectionView: UICollectionView!
     
     @IBOutlet weak var scanComicListBuyButton: NeumorphismButton!
-
+    
     @IBOutlet weak var scanComicListDeleteButton: NeumorphismButton!
     
     override func viewDidLoad() {
@@ -50,8 +52,12 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
-        return getComicList!.count
+        if let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]{
+            return getComicList.count
+        }else{
+            return 0
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -90,16 +96,16 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
         scanComicListCollectionView.indexPathsForVisibleItems.forEach{(indexPath) in
             let cell = scanComicListCollectionView.cellForItem(at: indexPath) as! ScanComicListCollectionViewCell
             cell.isEditing = editing
-             
+            
         }
-//        // ボタンの変更
-//        if editing {
-//            scanComicListBuyButton.setTitle("削除", for: .normal)
-//            scanComicListBuyButton.setTitleColor(UIColor(hex: "FF6363"), for: .normal)
-//        }else{
-//            scanComicListBuyButton.setTitle("買う", for: .normal)
-//            scanComicListBuyButton.setTitleColor(UIColor(hex: "4966FF"), for: .normal)
-//        }
+        //        // ボタンの変更
+        //        if editing {
+        //            scanComicListBuyButton.setTitle("削除", for: .normal)
+        //            scanComicListBuyButton.setTitleColor(UIColor(hex: "FF6363"), for: .normal)
+        //        }else{
+        //            scanComicListBuyButton.setTitle("買う", for: .normal)
+        //            scanComicListBuyButton.setTitleColor(UIColor(hex: "4966FF"), for: .normal)
+        //        }
     }
     @IBAction func deleteSelectedComics(_ sender: Any) {
         print("削除")
@@ -111,23 +117,46 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
             }
             userDefaults.set(getComicList,forKey: "comics")
             scanComicListCollectionView.deleteItems(at: selectedComics)
+            scanComicListCollectionView.reloadData()
         }
     }
     
     @IBAction func buySelectedComics(_ sender: Any) {
         print("買う")
+        var comic: [String: Any] = [:]
+        let f = DateFormatter()
+        f.timeStyle = .none
+        f.dateStyle = .short
+        f.locale = Locale(identifier: "ja_JP")
+        let now = Date()
+        print(f.string(from: now))
+        do {
+            let realm = try Realm()
+            print(Realm.Configuration.defaultConfiguration.fileURL!)
+            let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
+            getComicList.map{
+                for reco in $0{
+                    print(reco["isbnCode"] as Any)
+                    comic = [
+                        "barBode" : reco["isbnCode"]!,
+                        "comicInfo" :
+                            ["comicTitle" : reco["title"],
+                             "comicCover" : reco["cover"],
+                             "comicPurchaseDate" : f.string(from: now)]
+                    ]
+                    let comic = Comics(value: comic)
+                    
+                    try! realm.write {
+                        realm.add(comic)
+                    }
+                }
+            }
+        } catch {
+            print(error)
+        }
+        userDefaults.removeObject(forKey: "comics")
+        scanComicListCollectionView.reloadData()
     }
-    
-    
-//    @IBAction func listChangeMode(_ sender: Any) {
-//        if scanComicListCollectionView.isEditing == true{
-//            scanComicListCollectionView.isEditing = false
-//            print("通常")
-//        }else{
-//            scanComicListCollectionView.isEditing = true
-//            print("編集")
-//        }
-//    }
     
     
     /*
