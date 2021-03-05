@@ -17,16 +17,23 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     
     // スキャンリストUICollectionView
     @IBOutlet weak var scanComicListCollectionView: UICollectionView!
-    
     @IBOutlet weak var scanComicListBuyButton: NeumorphismButton!
-    
     @IBOutlet weak var scanComicListDeleteButton: NeumorphismButton!
+    @IBOutlet weak var backTopButton: NeumorphismButton!
+    @IBOutlet weak var backCheckButton: NeumorphismButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // 選択ボタン
-        navigationItem.rightBarButtonItem = editButtonItem
-        navigationItem.rightBarButtonItem?.title = "選択"
+        if (userDefaults.array(forKey: "comics") as? [[String:String]]) != nil{
+            print("あり")
+            navigationItem.rightBarButtonItem = editButtonItem
+            navigationItem.rightBarButtonItem?.title = "選択"
+        }else{
+            print("無し")
+            scanComicListBuyButton.isHidden = true
+        }
+        
         // ボタン
         scanComicListBuyButton.setTitleColor(UIColor(hex: "4966FF"), for: .normal)
         scanComicListDeleteButton.setTitleColor(UIColor(hex: "FF6363"), for: .normal)
@@ -98,14 +105,6 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
             cell.isEditing = editing
             
         }
-        //        // ボタンの変更
-        //        if editing {
-        //            scanComicListBuyButton.setTitle("削除", for: .normal)
-        //            scanComicListBuyButton.setTitleColor(UIColor(hex: "FF6363"), for: .normal)
-        //        }else{
-        //            scanComicListBuyButton.setTitle("買う", for: .normal)
-        //            scanComicListBuyButton.setTitleColor(UIColor(hex: "4966FF"), for: .normal)
-        //        }
     }
     @IBAction func deleteSelectedComics(_ sender: Any) {
         print("削除")
@@ -115,10 +114,19 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
             for indexpath in index {
                 getComicList?.remove(at: indexpath)
             }
-            userDefaults.set(getComicList,forKey: "comics")
+            if getComicList?.count != 0 {
+                userDefaults.set(getComicList,forKey: "comics")
+            }else{
+                userDefaults.removeObject(forKey: "comics")
+                scanComicListDeleteButton.isHidden = true
+                navigationItem.rightBarButtonItem = nil
+                backCheckButton.isHidden = false
+            }
+            
             scanComicListCollectionView.deleteItems(at: selectedComics)
             scanComicListCollectionView.reloadData()
         }
+        
     }
     
     @IBAction func buySelectedComics(_ sender: Any) {
@@ -154,10 +162,24 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
         } catch {
             print(error)
         }
+        navigationItem.title = "履歴に追加しました"
+        navigationItem.hidesBackButton = true
+        navigationItem.rightBarButtonItem = nil
+        scanComicListBuyButton.isHidden = true
+        backTopButton.isHidden = false
+        // 完了ページへ遷移
+        
+    }
+    @IBAction func backTopButtonAction(_ sender: Any) {
         userDefaults.removeObject(forKey: "comics")
-        scanComicListCollectionView.reloadData()
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
+    @IBAction func backCheckButtonAction(_ sender: Any) {
+        let layere_number = navigationController!.viewControllers.count
+        
+        self.navigationController?.popToViewController(navigationController!.viewControllers[layere_number-3], animated: true)
+    }
     
     /*
      // MARK: - Navigation

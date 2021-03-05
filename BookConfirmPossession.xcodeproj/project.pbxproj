@@ -23,6 +23,8 @@
 		ED2F8C0825DF6770008D3D78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2F8C0625DF6770008D3D78 /* LaunchScreen.storyboard */; };
 		ED2F8C1325DF6770008D3D78 /* BookConfirmPossessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F8C1225DF6770008D3D78 /* BookConfirmPossessionTests.swift */; };
 		ED2F8C1E25DF6770008D3D78 /* BookConfirmPossessionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F8C1D25DF6770008D3D78 /* BookConfirmPossessionUITests.swift */; };
+		ED41A39225F2890100F05F5A /* ScanComicSaveCompleted.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED41A39125F2890100F05F5A /* ScanComicSaveCompleted.storyboard */; };
+		ED41A39725F2891500F05F5A /* ScanComicSaveCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41A39625F2891500F05F5A /* ScanComicSaveCompletedViewController.swift */; };
 		ED5A162125E868B3002A1035 /* NeumorphismExtensionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A162025E868B3002A1035 /* NeumorphismExtensionButton.swift */; };
 		ED5A162A25E86917002A1035 /* NeumorphismButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A162925E86917002A1035 /* NeumorphismButton.swift */; };
 		ED5A163225E86B92002A1035 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5A163125E86B92002A1035 /* History.storyboard */; };
@@ -90,6 +92,8 @@
 		ED2F8C1D25DF6770008D3D78 /* BookConfirmPossessionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookConfirmPossessionUITests.swift; sourceTree = "<group>"; };
 		ED2F8C1F25DF6770008D3D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED2F8C3525DF6B4B008D3D78 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		ED41A39125F2890100F05F5A /* ScanComicSaveCompleted.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanComicSaveCompleted.storyboard; sourceTree = "<group>"; };
+		ED41A39625F2891500F05F5A /* ScanComicSaveCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanComicSaveCompletedViewController.swift; sourceTree = "<group>"; };
 		ED5A162025E868B3002A1035 /* NeumorphismExtensionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismExtensionButton.swift; sourceTree = "<group>"; };
 		ED5A162925E86917002A1035 /* NeumorphismButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismButton.swift; sourceTree = "<group>"; };
 		ED5A163125E86B92002A1035 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 				ED106F7F25EFA79B006EAE92 /* ScanComicListViewController.swift */,
 				ED106F8B25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.xib */,
 				ED106F8A25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift */,
+				ED41A39125F2890100F05F5A /* ScanComicSaveCompleted.storyboard */,
+				ED41A39625F2891500F05F5A /* ScanComicSaveCompletedViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED41A39225F2890100F05F5A /* ScanComicSaveCompleted.storyboard in Resources */,
 				ED88062625E8A62300F793C7 /* HistoryDetail.storyboard in Resources */,
 				ED106F8D25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.xib in Resources */,
 				ED095CA425E867FD00C20182 /* Top.storyboard in Resources */,
@@ -562,6 +569,7 @@
 				ED7BE70725EBF490003EE161 /* ComicCheckResultViewController.swift in Sources */,
 				EDEDD56425F2118B00123296 /* Model.swift in Sources */,
 				EDA2063E25EE18EB003A1555 /* Global.swift in Sources */,
+				ED41A39725F2891500F05F5A /* ScanComicSaveCompletedViewController.swift in Sources */,
 				ED88063525E8AA1300F793C7 /* ComicCheckViewController.swift in Sources */,
 				EDB6A42625ECAF79008A6259 /* NeumorphismExtensionView.swift in Sources */,
 				ED88062B25E8A7C700F793C7 /* HistoryDetailViewController.swift in Sources */,
