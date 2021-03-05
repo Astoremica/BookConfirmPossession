@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21B35111EC228541402DD306 /* Pods_BookConfirmPossessionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24CFD7645FBB7B9BFAC01924 /* Pods_BookConfirmPossessionTests.framework */; };
-		6670D2BAA34D73B4B2FAA1BF /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B613B9CF82C3F1291241AF4C /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework */; };
-		DA185A6410B9202FACBB0F69 /* Pods_BookConfirmPossession.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4F960830CC44B4BBA9DB79 /* Pods_BookConfirmPossession.framework */; };
+		03D825A56D898BF1C7511D94 /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7B62332E728AF460CAB225 /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework */; };
+		72AEDB2EE5862B8A7B8616C6 /* Pods_BookConfirmPossessionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299B10793C449931293B3474 /* Pods_BookConfirmPossessionTests.framework */; };
+		84D9FCDF410C754FF8FA5A01 /* Pods_BookConfirmPossession.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B565820A0650136949D186D /* Pods_BookConfirmPossession.framework */; };
 		ED095CA225E867FD00C20182 /* Top.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED095C9925E867FD00C20182 /* Top.strings */; };
 		ED095CA325E867FD00C20182 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED095C9B25E867FD00C20182 /* TopViewController.swift */; };
 		ED095CA425E867FD00C20182 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED095C9C25E867FD00C20182 /* Top.storyboard */; };
@@ -61,15 +61,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		24CFD7645FBB7B9BFAC01924 /* Pods_BookConfirmPossessionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookConfirmPossessionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		33B93C2DE75DA736796F92E5 /* Pods-BookConfirmPossession.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossession.debug.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession.debug.xcconfig"; sourceTree = "<group>"; };
-		6292B6BEA729EC7CE0B2CDA3 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		66F2D5BCE9E6018E12B70F00 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6D4F960830CC44B4BBA9DB79 /* Pods_BookConfirmPossession.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookConfirmPossession.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A28CFA4CA9E8AB2877C0585 /* Pods-BookConfirmPossessionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossessionTests.debug.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossessionTests/Pods-BookConfirmPossessionTests.debug.xcconfig"; sourceTree = "<group>"; };
-		9A237AEE81524DECE5F41B0C /* Pods-BookConfirmPossession.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossession.release.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession.release.xcconfig"; sourceTree = "<group>"; };
-		B613B9CF82C3F1291241AF4C /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B97239A1C60E3484A553328D /* Pods-BookConfirmPossessionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossessionTests.release.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossessionTests/Pods-BookConfirmPossessionTests.release.xcconfig"; sourceTree = "<group>"; };
+		1F7E909F0A3A55B7EF629BE5 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		299B10793C449931293B3474 /* Pods_BookConfirmPossessionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookConfirmPossessionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FD17A1AADA4BFC860196F17 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5EEDBCB7DBEC36BA3C04B46B /* Pods-BookConfirmPossession.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossession.debug.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession.debug.xcconfig"; sourceTree = "<group>"; };
+		6B7B62332E728AF460CAB225 /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B565820A0650136949D186D /* Pods_BookConfirmPossession.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookConfirmPossession.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9373F46CABFE667E3CD857E /* Pods-BookConfirmPossession.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossession.release.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession.release.xcconfig"; sourceTree = "<group>"; };
+		CF0CD5C03084285EB9C57617 /* Pods-BookConfirmPossessionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossessionTests.debug.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossessionTests/Pods-BookConfirmPossessionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D37EF538A8E3FD0BCEB506F6 /* Pods-BookConfirmPossessionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossessionTests.release.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossessionTests/Pods-BookConfirmPossessionTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED095C9A25E867FD00C20182 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Top.strings; sourceTree = "<group>"; };
 		ED095C9B25E867FD00C20182 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		ED095C9D25E867FD00C20182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Top.storyboard; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA185A6410B9202FACBB0F69 /* Pods_BookConfirmPossession.framework in Frameworks */,
+				84D9FCDF410C754FF8FA5A01 /* Pods_BookConfirmPossession.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,7 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21B35111EC228541402DD306 /* Pods_BookConfirmPossessionTests.framework in Frameworks */,
+				72AEDB2EE5862B8A7B8616C6 /* Pods_BookConfirmPossessionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,19 +131,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6670D2BAA34D73B4B2FAA1BF /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework in Frameworks */,
+				03D825A56D898BF1C7511D94 /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05CC47F62368B708737B20FC /* Frameworks */ = {
+		1139812FEB2CF6FBBD935211 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6D4F960830CC44B4BBA9DB79 /* Pods_BookConfirmPossession.framework */,
-				B613B9CF82C3F1291241AF4C /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework */,
-				24CFD7645FBB7B9BFAC01924 /* Pods_BookConfirmPossessionTests.framework */,
+				8B565820A0650136949D186D /* Pods_BookConfirmPossession.framework */,
+				6B7B62332E728AF460CAB225 /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework */,
+				299B10793C449931293B3474 /* Pods_BookConfirmPossessionTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -151,12 +151,12 @@
 		6E6FC287E9C2DF804F06AF83 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				33B93C2DE75DA736796F92E5 /* Pods-BookConfirmPossession.debug.xcconfig */,
-				9A237AEE81524DECE5F41B0C /* Pods-BookConfirmPossession.release.xcconfig */,
-				6292B6BEA729EC7CE0B2CDA3 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig */,
-				66F2D5BCE9E6018E12B70F00 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig */,
-				8A28CFA4CA9E8AB2877C0585 /* Pods-BookConfirmPossessionTests.debug.xcconfig */,
-				B97239A1C60E3484A553328D /* Pods-BookConfirmPossessionTests.release.xcconfig */,
+				5EEDBCB7DBEC36BA3C04B46B /* Pods-BookConfirmPossession.debug.xcconfig */,
+				C9373F46CABFE667E3CD857E /* Pods-BookConfirmPossession.release.xcconfig */,
+				1F7E909F0A3A55B7EF629BE5 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig */,
+				2FD17A1AADA4BFC860196F17 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig */,
+				CF0CD5C03084285EB9C57617 /* Pods-BookConfirmPossessionTests.debug.xcconfig */,
+				D37EF538A8E3FD0BCEB506F6 /* Pods-BookConfirmPossessionTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -215,7 +215,7 @@
 				ED2F8C1C25DF6770008D3D78 /* BookConfirmPossessionUITests */,
 				ED2F8BF925DF676F008D3D78 /* Products */,
 				6E6FC287E9C2DF804F06AF83 /* Pods */,
-				05CC47F62368B708737B20FC /* Frameworks */,
+				1139812FEB2CF6FBBD935211 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -311,11 +311,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED2F8C2225DF6770008D3D78 /* Build configuration list for PBXNativeTarget "BookConfirmPossession" */;
 			buildPhases = (
-				D71F37B9778587FF3FD5DB39 /* [CP] Check Pods Manifest.lock */,
+				610EE4CE01C5501DDCDD3CB3 /* [CP] Check Pods Manifest.lock */,
 				ED2F8BF425DF676F008D3D78 /* Sources */,
 				ED2F8BF525DF676F008D3D78 /* Frameworks */,
 				ED2F8BF625DF676F008D3D78 /* Resources */,
-				26D634A7C82D69B7CA0829D8 /* [CP] Embed Pods Frameworks */,
+				68E5CCF8239C6CA220A44C13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -330,7 +330,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED2F8C2525DF6770008D3D78 /* Build configuration list for PBXNativeTarget "BookConfirmPossessionTests" */;
 			buildPhases = (
-				3B2B4DB0DC0BF77AB347ACE5 /* [CP] Check Pods Manifest.lock */,
+				03ED706903B1557FB6E1289B /* [CP] Check Pods Manifest.lock */,
 				ED2F8C0A25DF6770008D3D78 /* Sources */,
 				ED2F8C0B25DF6770008D3D78 /* Frameworks */,
 				ED2F8C0C25DF6770008D3D78 /* Resources */,
@@ -349,11 +349,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED2F8C2825DF6770008D3D78 /* Build configuration list for PBXNativeTarget "BookConfirmPossessionUITests" */;
 			buildPhases = (
-				C9C5A5F9C14243D0AE653264 /* [CP] Check Pods Manifest.lock */,
+				7D4743A4E5DCAFF00CACBB58 /* [CP] Check Pods Manifest.lock */,
 				ED2F8C1525DF6770008D3D78 /* Sources */,
 				ED2F8C1625DF6770008D3D78 /* Frameworks */,
 				ED2F8C1725DF6770008D3D78 /* Resources */,
-				090130F3A01501601A35A692 /* [CP] Embed Pods Frameworks */,
+				51483090024710AC01CB38C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -444,41 +444,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		090130F3A01501601A35A692 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		26D634A7C82D69B7CA0829D8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3B2B4DB0DC0BF77AB347ACE5 /* [CP] Check Pods Manifest.lock */ = {
+		03ED706903B1557FB6E1289B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -500,29 +466,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C9C5A5F9C14243D0AE653264 /* [CP] Check Pods Manifest.lock */ = {
+		51483090024710AC01CB38C0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BookConfirmPossession-BookConfirmPossessionUITests-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D71F37B9778587FF3FD5DB39 /* [CP] Check Pods Manifest.lock */ = {
+		610EE4CE01C5501DDCDD3CB3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -538,6 +499,45 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BookConfirmPossession-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68E5CCF8239C6CA220A44C13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D4743A4E5DCAFF00CACBB58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookConfirmPossession-BookConfirmPossessionUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -752,7 +752,7 @@
 		};
 		ED2F8C2325DF6770008D3D78 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33B93C2DE75DA736796F92E5 /* Pods-BookConfirmPossession.debug.xcconfig */;
+			baseConfigurationReference = 5EEDBCB7DBEC36BA3C04B46B /* Pods-BookConfirmPossession.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -772,7 +772,7 @@
 		};
 		ED2F8C2425DF6770008D3D78 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9A237AEE81524DECE5F41B0C /* Pods-BookConfirmPossession.release.xcconfig */;
+			baseConfigurationReference = C9373F46CABFE667E3CD857E /* Pods-BookConfirmPossession.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -792,7 +792,7 @@
 		};
 		ED2F8C2625DF6770008D3D78 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A28CFA4CA9E8AB2877C0585 /* Pods-BookConfirmPossessionTests.debug.xcconfig */;
+			baseConfigurationReference = CF0CD5C03084285EB9C57617 /* Pods-BookConfirmPossessionTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -815,7 +815,7 @@
 		};
 		ED2F8C2725DF6770008D3D78 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B97239A1C60E3484A553328D /* Pods-BookConfirmPossessionTests.release.xcconfig */;
+			baseConfigurationReference = D37EF538A8E3FD0BCEB506F6 /* Pods-BookConfirmPossessionTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -838,7 +838,7 @@
 		};
 		ED2F8C2925DF6770008D3D78 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6292B6BEA729EC7CE0B2CDA3 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig */;
+			baseConfigurationReference = 1F7E909F0A3A55B7EF629BE5 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -859,7 +859,7 @@
 		};
 		ED2F8C2A25DF6770008D3D78 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66F2D5BCE9E6018E12B70F00 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig */;
+			baseConfigurationReference = 2FD17A1AADA4BFC860196F17 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

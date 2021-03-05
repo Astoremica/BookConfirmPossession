@@ -7,6 +7,7 @@ target 'BookConfirmPossession' do
 
   # Pods for BookConfirmPossession
   pod 'RealmSwift'
+  pod 'Realm'
 
   target 'BookConfirmPossessionTests' do
     inherit! :search_paths
