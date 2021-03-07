@@ -11,13 +11,13 @@
         <!--履歴詳細-->
         <scene sceneID="S5Z-wW-jt6">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="h9V-pc-TnN" customClass="HistoryDetailViewController" customModule="BookConfirmPossession" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="historyDetail" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h9V-pc-TnN" customClass="HistoryDetailViewController" customModule="BookConfirmPossession" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hMQ-Et-QqN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UhW-le-Nhv">
-                                <rect key="frame" x="175" y="233" width="42" height="21"/>
+                                <rect key="frame" x="175" y="233" width="204" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -29,10 +29,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="履歴詳細" id="dju-v0-hFP"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="test" destination="UhW-le-Nhv" id="d1n-ka-NzZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PYq-XH-qnJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="906" y="127"/>
+            <point key="canvasLocation" x="905.79710144927549" y="126.5625"/>
         </scene>
     </scenes>
     <resources>

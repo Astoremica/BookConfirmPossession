@@ -9,6 +9,9 @@ import UIKit
 
 class HistoryDetailViewController: UIViewController {
 
+    @IBOutlet weak var test: UILabel!
+    
+    var number:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -19,6 +22,7 @@ class HistoryDetailViewController: UIViewController {
             view.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
 //            historyCollectionView.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
         }
+        test.text = number
     }
     
 

@@ -46,7 +46,7 @@
                 <outlet property="scanComicListCellImageView" destination="7RN-Iy-ANE" id="yLp-jU-nRM"/>
                 <outlet property="selectLabel" destination="ZDA-bt-ESZ" id="yjM-Ek-Vfe"/>
             </connections>
-            <point key="canvasLocation" x="32.608695652173914" y="134.93303571428569"/>
+            <point key="canvasLocation" x="32.608695652173914" y="134.26339285714286"/>
         </collectionViewCell>
     </objects>
 </document>

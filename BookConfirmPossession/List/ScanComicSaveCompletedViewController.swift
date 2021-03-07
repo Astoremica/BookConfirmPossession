@@ -10,6 +10,7 @@ import UIKit
 class ScanComicSaveCompletedViewController: UIViewController,UICollectionViewDataSource {
     
     let userDefaults = UserDefaults.standard
+    let collectionLayout = UICollectionViewFlowLayout()
     
     @IBOutlet weak var backTopButton: NeumorphismButton!
     
@@ -29,6 +30,8 @@ class ScanComicSaveCompletedViewController: UIViewController,UICollectionViewDat
             view.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
             scanComicListCollectionView.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
         }
+        collectionLayout.minimumLineSpacing = 20
+        collectionLayout.minimumInteritemSpacing = 20
         
         scanComicListCollectionView.register(UINib(nibName: "ScanComicListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScanComicListCollectionViewCell")
         

@@ -135,11 +135,11 @@ class ComicCheckViewController: UIViewController {
         return .portrait
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "toScanComicList" {
-                let nextVC = segue.destination as! ScanComicListViewController
-                nextVC.fromPage = 1
-            }
+        if segue.identifier == "toScanComicList" {
+            let nextVC = segue.destination as! ScanComicListViewController
+            nextVC.fromPage = 1
         }
+    }
 }
 extension ComicCheckViewController : AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
@@ -169,14 +169,14 @@ extension ComicCheckViewController : AVCaptureMetadataOutputObjectsDelegate {
                     // OKボタンで再スキャン
                     self.avCaptureSession.startRunning()
                 }
-                showAlert(title: "スキャンミスです", message: "もう一つ上のバーコードです", actions: [okAction])
+                showActionSheet(title: "スキャンミスです", message: "もう一つ上のバーコードです", actions: [okAction])
                 
             }else{
                 let okAction = UIAlertAction(title: "OK", style: .default) { _ in
                     // OKボタンで再スキャン
                     self.avCaptureSession.startRunning()
                 }
-                showAlert(title: "スキャンミスです", message: "本ではありません。", actions: [okAction])
+                showActionSheet(title: "スキャンミスです", message: "本ではありません。", actions: [okAction])
             }
         }
     }
