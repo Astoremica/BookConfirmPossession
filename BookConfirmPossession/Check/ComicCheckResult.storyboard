@@ -38,8 +38,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021/03/01" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0b-al-HHX">
-                                        <rect key="frame" x="139" y="460" width="111" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0b-al-HHX">
+                                        <rect key="frame" x="250" y="460" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -109,7 +109,7 @@
                     <navigationItem key="navigationItem" id="UUR-e0-S1h">
                         <barButtonItem key="rightBarButtonItem" title="リスト" id="DDe-2r-T9z">
                             <connections>
-                                <segue destination="hdM-KL-fXq" kind="show" id="cG2-9q-FFT"/>
+                                <segue destination="hdM-KL-fXq" kind="show" identifier="toScanComicList" id="cG2-9q-FFT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

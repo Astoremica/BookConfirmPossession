@@ -16,9 +16,12 @@ class ComicCheckResultViewController: UIViewController {
     let userDefaults = UserDefaults.standard
     let functions = Functions()
     
+    let realm = try! Realm()
+    
     
     // 読み込んだISBNコード用
     var barCode : String = ""
+    var comics: Results<Comics>!
     
     // imageLinkのデータ構造
     struct  ImageLinkJson: Codable {
@@ -63,7 +66,7 @@ class ComicCheckResultViewController: UIViewController {
     var comicTitle:String?
     var comicCover:String?
     var comicPubdate:String?
-
+    
     
     override func viewDidLoad() {
         //        semaphore = DispatchSemaphore(value: 0)
@@ -89,6 +92,8 @@ class ComicCheckResultViewController: UIViewController {
         }
         print(req_url)
         
+        
+        
         // リクエストに必要な情報を生成
         let req = URLRequest(url: req_url)
         // データ転送を管理するためのセッションを生成
@@ -104,40 +109,51 @@ class ComicCheckResultViewController: UIViewController {
                 let decoder = JSONDecoder()
                 // 受け取ったJSONデータをパース(解析)して格納
                 let json = try decoder.decode(ResultJson.self, from: data!)
-                if let comic = json.items?[0].volumeInfo{
-                    self.comicTitle = comic.title ?? ""
-                    self.comicCover = comic.imageLinks?.smallThumbnail ?? ""
-                    self.comicPubdate = comic.publishedDate ?? ""
-                }else{
-                    // 情報が取得できない時
-                    self.comicTitle =  "取得できませんでした"
-                    Thread.sleep(forTimeInterval: 0.5)
-                    self.comicCover = ""
-                    self.comicPubdate =  "取得できませんでした"
-                }
-                self.comicTitleLabel.text = self.comicTitle
-                if self.comicCover != ""{
-                    self.comicCoverImageView.downloaded(from:self.comicCover!)
-                }else{
-                    // GoogleBooksAPIで表紙が入手できなかった場合の手段
-                    self.comicCover = "https://cover.openbd.jp/\(barCode).jpg"
-                    self.comicCoverImageView.downloaded(from:self.comicCover!)
-                }
-                global.comic = ["title":self.comicTitle ?? "","pubdate":self.comicPubdate ?? "","cover":self.comicCover!,"isbnCode":barCode]
-                
-                if var getComicList = userDefaults.array(forKey: "comics") as? [[String:String]] {
-                    print(type(of: getComicList))
-                    print(getComicList)
-                    getComicList.append(global.comic)
-                    userDefaults.set(getComicList, forKey: "comics")
-                }else{
-                    let getComicList :[[String:String]] = [global.comic]
-                    userDefaults.set(getComicList, forKey: "comics")
+                comics = realm.objects(Comics.self).filter("barBode == '\(self.barCode)'")
+                if comics.count == 0 {
+                    if let comic = json.items?[0].volumeInfo{
+                        self.comicTitle = comic.title ?? ""
+                        self.comicCover = comic.imageLinks?.smallThumbnail ?? ""
+                        self.comicPubdate = comic.publishedDate ?? ""
+                    }else{
+                        // 情報が取得できない時
+                        self.comicTitle =  "取得できませんでした"
+                        Thread.sleep(forTimeInterval: 0.5)
+                        self.comicCover = ""
+                        self.comicPubdate =  "取得できませんでした"
+                    }
                     
+                    checkResultLabel.text = "未購入"
+                    checkResultLabel.textColor = UIColor(displayP3Red: 224/255, green: 71/255, blue: 71/255, alpha: 1.0)
+                    
+                    self.comicTitleLabel.text = self.comicTitle
+                    if self.comicCover != ""{
+                        self.comicCoverImageView.downloaded(from:self.comicCover!)
+                    }else{
+                        // GoogleBooksAPIで表紙が入手できなかった場合の手段
+                        self.comicCover = "https://cover.openbd.jp/\(barCode).jpg"
+                        self.comicCoverImageView.downloaded(from:self.comicCover!)
+                    }
+                    self.comicPurchaseDate.text = self.comicPubdate
+                    global.comic = ["title":self.comicTitle ?? "","pubdate":self.comicPubdate ?? "","cover":self.comicCover!,"isbnCode":barCode]
+                    if var getComicList = userDefaults.array(forKey: "comics") as? [[String:String]] {
+                        getComicList.append(global.comic)
+                        userDefaults.set(getComicList, forKey: "comics")
+                    }else{
+                        let getComicList :[[String:String]] = [global.comic]
+                        userDefaults.set(getComicList, forKey: "comics")
+                        
+                    }
+                    // スキャンした書籍情報を初期化
+                    global.comic.removeAll()
+                }else{
+                    checkResultLabel.text = "購入済み"
+                    checkResultLabel.textColor = UIColor(displayP3Red: 73/255, green: 102/255, blue: 255/255, alpha: 1.0)
+                    comicTitleLabel.text = comics[0].comicInfo?.comicTitle
+                    comicPurchaseDate.text = comics[0].comicInfo?.comicPurchaseDate
+                    comicCoverImageView.downloaded(from:comics[0].comicInfo!.comicCover)
+                    comicPurechaseButton.isHidden = true
                 }
-                // スキャンした書籍情報を初期化
-                global.comic.removeAll()
-                
             } catch {
                 // エラー処理
                 print(error)
@@ -146,23 +162,12 @@ class ComicCheckResultViewController: UIViewController {
         // ダウンロード開始
         task.resume()
         
+        
+        
+        
     }
     
     @IBAction func addAnotherComicButtonAction(_ sender: Any) {
-        
-        
-//        if var getComicList = userDefaults.array(forKey: "comics") as? [[String:String]] {
-//            print(type(of: getComicList))
-//            print(getComicList)
-//            getComicList.append(global.comic)
-//            userDefaults.set(getComicList, forKey: "comics")
-//        }else{
-//            let getComicList :[[String:String]] = [global.comic]
-//            userDefaults.set(getComicList, forKey: "comics")
-//        }
-//        // スキャンした書籍情報を初期化
-//        global.comic.removeAll()
-        // 読みとり画面へ戻る
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -173,7 +178,6 @@ class ComicCheckResultViewController: UIViewController {
             let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
             getComicList.map{
                 for reco in $0{
-                    print(reco["isbnCode"] as Any)
                     comic = [
                         "barBode" : reco["isbnCode"]!,
                         "comicInfo" :
@@ -196,11 +200,11 @@ class ComicCheckResultViewController: UIViewController {
         self.navigationController?.pushViewController(nextView, animated: true)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if segue.identifier == "toScanComicList" {
-                let nextVC = segue.destination as! ScanComicListViewController
-                nextVC.fromPage = 0
-            }
+        if segue.identifier == "toScanComicList" {
+            let nextVC = segue.destination as! ScanComicListViewController
+            nextVC.fromPage = 0
         }
+    }
     /*
      // MARK: - Navigation
      
@@ -210,6 +214,6 @@ class ComicCheckResultViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-
+    
 }
 
