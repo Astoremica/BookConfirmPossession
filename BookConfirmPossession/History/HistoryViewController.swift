@@ -15,27 +15,40 @@ class HistoryViewController: UIViewController ,UICollectionViewDataSource,UIColl
     
     let realm = try! Realm()
     
-    @IBOutlet weak var scanComicListCollectionView: UICollectionView!
-    
+    @IBOutlet weak var historyComicListCollectionView: UICollectionView!
+    @IBOutlet weak var historyComicListDeleteButton: NeumorphismButton!
     var comics: Results<Comics>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 選択ボタン
+        
+        comics = realm.objects(Comics.self)
+        
+        if comics != nil {
+            navigationItem.rightBarButtonItem = editButtonItem
+            navigationItem.rightBarButtonItem?.title = "選択"
+        }
+        
+        
+        historyComicListDeleteButton.setTitleColor(UIColor(hex: "FF6363"), for: .normal)
+        
         if traitCollection.userInterfaceStyle == .dark {
             view.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
-            scanComicListCollectionView.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
+            historyComicListCollectionView.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
         }else{
             view.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
-            scanComicListCollectionView.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
+            historyComicListCollectionView.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
         }
         
         collectionLayout.minimumLineSpacing = 20
         collectionLayout.minimumInteritemSpacing = 20
         
-        scanComicListCollectionView.register(UINib(nibName: "ScanComicListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScanComicListCollectionViewCell")
+        historyComicListCollectionView.register(UINib(nibName: "ScanComicListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScanComicListCollectionViewCell")
         
-        scanComicListCollectionView.delegate = self
-        scanComicListCollectionView.dataSource = self
+        historyComicListCollectionView.delegate = self
+        historyComicListCollectionView.dataSource = self
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         comics = realm.objects(Comics.self)
@@ -45,26 +58,71 @@ class HistoryViewController: UIViewController ,UICollectionViewDataSource,UIColl
             return 0
         }
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         comics = realm.objects(Comics.self)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ScanComicListCollectionViewCell", for: indexPath) as! ScanComicListCollectionViewCell
         cell.scanComicListCellImageView.downloaded(from: comics[indexPath.row].comicInfo!.comicCover)
+        cell.isEditing = isEditing
         return cell
     }
     
     // セルが選択されたときの処理
-        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            comics = realm.objects(Comics.self)
-            print(type(of: comics[indexPath.row].barBode))
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        comics = realm.objects(Comics.self)
+        if !isEditing{
             let storyboard: UIStoryboard = UIStoryboard(name: "HistoryDetail", bundle: nil)//遷移先のStoryboardを設定
             let nextView = storyboard.instantiateViewController(withIdentifier: "historyDetail") as! HistoryDetailViewController
             nextView.number = comics[indexPath.row].barBode
             self.navigationController?.pushViewController(nextView, animated: true)
+        }
+    }
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        historyComicListCollectionView.allowsMultipleSelection = editing
+        historyComicListDeleteButton.isHidden = !editing
+        historyComicListCollectionView.indexPathsForSelectedItems?.forEach({(indexpath) in
+            historyComicListCollectionView.deselectItem(at: indexpath, animated: false)
+        })
+        historyComicListCollectionView.indexPathsForVisibleItems.forEach{(indexPath) in
+            let cell = historyComicListCollectionView.cellForItem(at: indexPath) as! ScanComicListCollectionViewCell
+            cell.isEditing = editing
             
         }
+    }
     
-    
+    @IBAction func historyComicListDeleteButtonAction(_ sender: Any) {
+        comics = realm.objects(Comics.self)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            if let selectedComics = self.historyComicListCollectionView.indexPathsForSelectedItems{
+                let index = selectedComics.map{$0[1]}.sorted().reversed()
+                
+                for indexpath in index {
+                    let results = self.comics.filter("barBode == '\(self.comics[indexpath].barBode)'")
+                    do{
+                        try self.realm.write{
+                            self.realm.delete(results)
+                        }
+                    }catch {
+                        print("Error \(error)")
+                    }
+                }
+                if self.comics.count == 0 {
+                    self.navigationItem.rightBarButtonItem = nil
+                    self.historyComicListDeleteButton.isHidden = true
+                }
+                
+                self.historyComicListCollectionView.deleteItems(at: selectedComics)
+                self.historyComicListCollectionView.reloadData()
+            }
+            
+        }
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { _ in
+            print("キャンセルが選択されました。")
+        }
+        showActionSheet(title: "削除しますか？", message: "削除後は復元できません。", actions: [okAction,cancelAction])
+    }
     
     /*
      // MARK: - Navigation

@@ -83,6 +83,7 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView,didSelectItemAt indexPath: IndexPath) {
         if !isEditing{
+            // 編集モードでは無い時
             let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
             print(getComicList![indexPath.row])
         }
@@ -107,24 +108,35 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     }
     @IBAction func deleteSelectedComics(_ sender: Any) {
         print("削除")
-        var getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
-        if let selectedComics = scanComicListCollectionView.indexPathsForSelectedItems{
-            let index = selectedComics.map{$0[1]}.sorted().reversed()
-            for indexpath in index {
-                getComicList?.remove(at: indexpath)
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+            // OKボタンで再スキャン
+            var getComicList = self.userDefaults.array(forKey: "comics") as? [[String:String]]
+            if let selectedComics = self.scanComicListCollectionView.indexPathsForSelectedItems{
+                let index = selectedComics.map{$0[1]}.sorted().reversed()
+                for indexpath in index {
+                    getComicList?.remove(at: indexpath)
+                }
+                if getComicList?.count != 0 {
+                    self.userDefaults.set(getComicList,forKey: "comics")
+                }else{
+                    self.userDefaults.removeObject(forKey: "comics")
+                    self.scanComicListDeleteButton.isHidden = true
+                    self.navigationItem.rightBarButtonItem = nil
+                    self.backCheckButton.isHidden = false
+                }
+                
+                self.scanComicListCollectionView.deleteItems(at: selectedComics)
+                self.scanComicListCollectionView.reloadData()
             }
-            if getComicList?.count != 0 {
-                userDefaults.set(getComicList,forKey: "comics")
-            }else{
-                userDefaults.removeObject(forKey: "comics")
-                scanComicListDeleteButton.isHidden = true
-                navigationItem.rightBarButtonItem = nil
-                backCheckButton.isHidden = false
-            }
-            
-            scanComicListCollectionView.deleteItems(at: selectedComics)
-            scanComicListCollectionView.reloadData()
         }
+        let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel){_ in
+            print("cancelAction")
+        }
+//        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { _ in
+//            print("キャンセルが選択されました。")
+//        }
+        showActionSheet(title: "削除しますか？", message: "削除後は復元できません。", actions: [okAction,cancelAction])
+        
         
     }
     
@@ -167,7 +179,7 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
         
         
     }
-
+    
     
     @IBAction func backCheckButtonAction(_ sender: Any) {
         let layere_number = navigationController!.viewControllers.count
