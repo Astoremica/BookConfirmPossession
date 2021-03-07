@@ -95,7 +95,7 @@
                         <outlet property="scanComicListBuyButton" destination="RoB-dG-wRG" id="rGd-1B-RRc"/>
                         <outlet property="scanComicListCollectionView" destination="Jwb-Qi-q3x" id="pot-YG-cdD"/>
                         <outlet property="scanComicListDeleteButton" destination="DFe-de-a5S" id="h89-oA-5cU"/>
-                        <segue destination="Bsb-N0-HRh" kind="show" id="3WM-tA-rXA"/>
+                        <segue destination="Bsb-N0-HRh" kind="show" identifier="toSaveCompleted" id="3WM-tA-rXA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uR-34-sg6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

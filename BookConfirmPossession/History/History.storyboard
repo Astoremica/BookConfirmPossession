@@ -63,7 +63,7 @@
                     <connections>
                         <outlet property="historyComicListCollectionView" destination="ARy-I4-lKg" id="UvK-Oh-M87"/>
                         <outlet property="historyComicListDeleteButton" destination="Hhp-Wz-bR1" id="pa6-yh-gOd"/>
-                        <segue destination="fhy-Xz-gBa" kind="show" identifier="" id="0x2-ty-KRL"/>
+                        <segue destination="fhy-Xz-gBa" kind="show" identifier="toHistoryDetail" id="0x2-ty-KRL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="134-ax-m0m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

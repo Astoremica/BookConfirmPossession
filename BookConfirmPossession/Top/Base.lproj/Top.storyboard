@@ -37,7 +37,7 @@
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="24"/>
                                 <state key="normal" title="履歴"/>
                                 <connections>
-                                    <segue destination="Eo2-wj-NTP" kind="show" id="mNS-SD-As9"/>
+                                    <segue destination="Eo2-wj-NTP" kind="show" identifier="toHistory" id="mNS-SD-As9"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -90,7 +90,6 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="heH-pj-Z4z"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bbe-hA-Xz6">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
