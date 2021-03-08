@@ -28,7 +28,6 @@ class HistoryViewController: UIViewController ,UICollectionViewDataSource,UIColl
         comics = realm.objects(Comics.self)
         
         if comics.count != 0 {
-            
             navigationItem.rightBarButtonItem = editButtonItem
             navigationItem.rightBarButtonItem?.title = "選択"
         }
@@ -56,6 +55,10 @@ class HistoryViewController: UIViewController ,UICollectionViewDataSource,UIColl
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         historyComicListCollectionView.reloadData()
+        comics = realm.objects(Comics.self)
+        if comics.count == 0 {
+            navigationItem.rightBarButtonItem = nil
+        }
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         comics = realm.objects(Comics.self)
