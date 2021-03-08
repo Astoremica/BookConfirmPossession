@@ -29,11 +29,9 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
         super.viewDidLoad()
         // 選択ボタン
         if (userDefaults.array(forKey: "comics") as? [[String:String]]) != nil{
-            print("あり")
             navigationItem.rightBarButtonItem = editButtonItem
             navigationItem.rightBarButtonItem?.title = "選択"
         }else{
-            print("無し")
             scanComicListBuyButton.isHidden = true
             backCheckButton.isHidden = false
         }
@@ -84,8 +82,6 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView,didSelectItemAt indexPath: IndexPath) {
         if !isEditing{
             // 編集モードでは無い時
-            let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
-            print(getComicList![indexPath.row])
         }
         
     }
@@ -107,7 +103,7 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
         }
     }
     @IBAction func deleteSelectedComics(_ sender: Any) {
-        print("削除")
+        
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             // OKボタンで再スキャン
             var getComicList = self.userDefaults.array(forKey: "comics") as? [[String:String]]
@@ -130,25 +126,21 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
             }
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel){_ in
-            print("cancelAction")
+        
         }
-//        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { _ in
-//            print("キャンセルが選択されました。")
-//        }
         showAlert(title: "削除しますか？", message: "削除後は復元できません。", actions: [okAction,cancelAction])
         
         
     }
     
     @IBAction func buySelectedComics(_ sender: Any) {
-        print("買う")
+        
         var comic: [String: Any] = [:]
         do {
             let realm = try Realm()
             let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
             getComicList.map{
                 for reco in $0{
-                    print(reco["isbnCode"] as Any)
                     comic = [
                         "barBode" : reco["isbnCode"]!,
                         "comicInfo" :

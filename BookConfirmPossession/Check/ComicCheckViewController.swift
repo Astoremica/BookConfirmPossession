@@ -165,15 +165,15 @@ extension ComicCheckViewController : AVCaptureMetadataOutputObjectsDelegate {
                         scanListCodeArray.append(reco["isbnCode"]!)
                     }
                 }
-                print(scanListCodeArray)
+
                 if !scanListCodeArray.contains(code){
-                    print("リストあり")
+                
                     let storyboard: UIStoryboard = UIStoryboard(name: "ComicCheckResult", bundle: nil)//遷移先のStoryboardを設定
                     let nextView = storyboard.instantiateViewController(withIdentifier: "comicCheckResult") as! ComicCheckResultViewController
                     nextView.barCode = code
                     self.navigationController?.pushViewController(nextView, animated: true)
                 }else{
-                    print("リストなし")
+                
                     let okAction = UIAlertAction(title: "OK", style: .default) { _ in
 
                         self.avCaptureSession.startRunning()

@@ -92,7 +92,7 @@ class ComicCheckResultViewController: UIViewController {
         guard let req_url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(barCode)") else {
             return
         }
-        print(req_url)
+    
         
         
         

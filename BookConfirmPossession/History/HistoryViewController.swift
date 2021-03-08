@@ -27,7 +27,8 @@ class HistoryViewController: UIViewController ,UICollectionViewDataSource,UIColl
         
         comics = realm.objects(Comics.self)
         
-        if comics != nil {
+        if comics.count != 0 {
+            
             navigationItem.rightBarButtonItem = editButtonItem
             navigationItem.rightBarButtonItem?.title = "選択"
         }
@@ -126,7 +127,7 @@ class HistoryViewController: UIViewController ,UICollectionViewDataSource,UIColl
             
         }
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { _ in
-            print("キャンセルが選択されました。")
+            
         }
         showAlert(title: "削除しますか？", message: "削除後は復元できません。", actions: [okAction,cancelAction])
     }
