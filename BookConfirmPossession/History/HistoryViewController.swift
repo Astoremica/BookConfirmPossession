@@ -17,6 +17,7 @@ class HistoryViewController: UIViewController ,UICollectionViewDataSource,UIColl
     
     @IBOutlet weak var historyComicListCollectionView: UICollectionView!
     @IBOutlet weak var historyComicListDeleteButton: NeumorphismButton!
+    
     var comics: Results<Comics>!
     
     override func viewDidLoad() {
@@ -50,6 +51,11 @@ class HistoryViewController: UIViewController ,UICollectionViewDataSource,UIColl
         historyComicListCollectionView.delegate = self
         historyComicListCollectionView.dataSource = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        historyComicListCollectionView.reloadData()
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         comics = realm.objects(Comics.self)
         if comics != nil {
@@ -73,7 +79,8 @@ class HistoryViewController: UIViewController ,UICollectionViewDataSource,UIColl
         if !isEditing{
             let storyboard: UIStoryboard = UIStoryboard(name: "HistoryDetail", bundle: nil)//遷移先のStoryboardを設定
             let nextView = storyboard.instantiateViewController(withIdentifier: "historyDetail") as! HistoryDetailViewController
-            nextView.number = comics[indexPath.row].barBode
+            nextView.barCode = comics[indexPath.row].barBode
+            nextView.selectIndexPath = indexPath.row
             self.navigationController?.pushViewController(nextView, animated: true)
         }
     }
@@ -121,7 +128,7 @@ class HistoryViewController: UIViewController ,UICollectionViewDataSource,UIColl
         let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { _ in
             print("キャンセルが選択されました。")
         }
-        showActionSheet(title: "削除しますか？", message: "削除後は復元できません。", actions: [okAction,cancelAction])
+        showAlert(title: "削除しますか？", message: "削除後は復元できません。", actions: [okAction,cancelAction])
     }
     
     /*

@@ -135,7 +135,7 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
 //        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel) { _ in
 //            print("キャンセルが選択されました。")
 //        }
-        showActionSheet(title: "削除しますか？", message: "削除後は復元できません。", actions: [okAction,cancelAction])
+        showAlert(title: "削除しますか？", message: "削除後は復元できません。", actions: [okAction,cancelAction])
         
         
     }
