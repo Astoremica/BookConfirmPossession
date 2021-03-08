@@ -41,7 +41,6 @@
 		EDB6A42625ECAF79008A6259 /* NeumorphismExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A42525ECAF79008A6259 /* NeumorphismExtensionView.swift */; };
 		EDB6A43425ECB72D008A6259 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A43325ECB72D008A6259 /* Extensions.swift */; };
 		EDD096DE25F5B298000C6FB4 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD096DD25F5B298000C6FB4 /* UPCarouselFlowLayout.swift */; };
-		EDEB03BD25F1471300D32EAD /* ComicCheckAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEB03BC25F1471300D32EAD /* ComicCheckAPI.swift */; };
 		EDEDD56425F2118B00123296 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEDD56325F2118B00123296 /* Model.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,7 +109,6 @@
 		EDB6A42525ECAF79008A6259 /* NeumorphismExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismExtensionView.swift; sourceTree = "<group>"; };
 		EDB6A43325ECB72D008A6259 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		EDD096DD25F5B298000C6FB4 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
-		EDEB03BC25F1471300D32EAD /* ComicCheckAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicCheckAPI.swift; sourceTree = "<group>"; };
 		EDEDD56325F2118B00123296 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,7 +189,6 @@
 		ED095CA025E867FD00C20182 /* Check */ = {
 			isa = PBXGroup;
 			children = (
-				EDEB03BC25F1471300D32EAD /* ComicCheckAPI.swift */,
 				ED88062F25E8A9A500F793C7 /* ComicCheck.storyboard */,
 				ED88063425E8AA1300F793C7 /* ComicCheckViewController.swift */,
 				ED7BE70125EBF464003EE161 /* ComicCheckResult.storyboard */,
@@ -564,7 +561,6 @@
 				ED2F8BFE25DF676F008D3D78 /* SceneDelegate.swift in Sources */,
 				ED106F8025EFA79B006EAE92 /* ScanComicListViewController.swift in Sources */,
 				EDB6A43425ECB72D008A6259 /* Extensions.swift in Sources */,
-				EDEB03BD25F1471300D32EAD /* ComicCheckAPI.swift in Sources */,
 				ED106F8C25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift in Sources */,
 				ED7BE70725EBF490003EE161 /* ComicCheckResultViewController.swift in Sources */,
 				EDEDD56425F2118B00123296 /* Model.swift in Sources */,

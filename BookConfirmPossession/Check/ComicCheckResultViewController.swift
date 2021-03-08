@@ -55,6 +55,8 @@ class ComicCheckResultViewController: UIViewController {
     @IBOutlet weak var comicCoverImageView: UIImageView!
     // タイトル
     @IBOutlet weak var comicTitleLabel: UILabel!
+    // 購入済みなら購入日、未購入なら発売日
+    @IBOutlet weak var comicDateKindLabel: UILabel!
     // 購入日
     @IBOutlet weak var comicPurchaseDate: UILabel!
     // 買うボタン未購入の時のみ
@@ -90,7 +92,7 @@ class ComicCheckResultViewController: UIViewController {
         guard let req_url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(barCode)") else {
             return
         }
-        print(req_url)
+    
         
         
         
@@ -115,6 +117,7 @@ class ComicCheckResultViewController: UIViewController {
                         self.comicTitle = comic.title ?? ""
                         self.comicCover = comic.imageLinks?.smallThumbnail ?? ""
                         self.comicPubdate = comic.publishedDate ?? ""
+                        
                     }else{
                         // 情報が取得できない時
                         self.comicTitle =  "取得できませんでした"
@@ -122,6 +125,7 @@ class ComicCheckResultViewController: UIViewController {
                         self.comicCover = ""
                         self.comicPubdate =  "取得できませんでした"
                     }
+                    
                     
                     checkResultLabel.text = "未購入"
                     checkResultLabel.textColor = UIColor(displayP3Red: 224/255, green: 71/255, blue: 71/255, alpha: 1.0)
@@ -144,9 +148,11 @@ class ComicCheckResultViewController: UIViewController {
                         userDefaults.set(getComicList, forKey: "comics")
                         
                     }
+                    comicDateKindLabel.text = "発売日"
                     // スキャンした書籍情報を初期化
                     global.comic.removeAll()
                 }else{
+                    comicDateKindLabel.text = "購入日"
                     checkResultLabel.text = "購入済み"
                     checkResultLabel.textColor = UIColor(displayP3Red: 73/255, green: 102/255, blue: 255/255, alpha: 1.0)
                     comicTitleLabel.text = comics[0].comicInfo?.comicTitle
@@ -174,7 +180,6 @@ class ComicCheckResultViewController: UIViewController {
     @IBAction func scanComicListBuyButton(_ sender: Any) {
         var comic: [String: Any] = [:]
         do {
-            let realm = try Realm()
             let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
             getComicList.map{
                 for reco in $0{
@@ -192,8 +197,6 @@ class ComicCheckResultViewController: UIViewController {
                     }
                 }
             }
-        } catch {
-            print(error)
         }
         let storyboard: UIStoryboard = UIStoryboard(name: "ScanComicSaveCompleted", bundle: nil)//遷移先のStoryboardを設定
         let nextView = storyboard.instantiateViewController(withIdentifier: "comicSaveCompleted") as! ScanComicSaveCompletedViewController

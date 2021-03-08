@@ -14,11 +14,14 @@ import AVFoundation
 
 class ComicCheckViewController: UIViewController {
     
+    
+    let userDefaults = UserDefaults.standard
+    let global = Global()
+    
+    
     var avCaptureSession: AVCaptureSession!
     var avPreviewLayer: AVCaptureVideoPreviewLayer!
     
-    
-    let global = Global()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,12 +158,30 @@ extension ComicCheckViewController : AVCaptureMetadataOutputObjectsDelegate {
             let start = code.startIndex
             
             if code[start] == "9" {
+                var scanListCodeArray:[String] = []
+                let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
+                getComicList.map{
+                    for reco in $0{
+                        scanListCodeArray.append(reco["isbnCode"]!)
+                    }
+                }
+
+                if !scanListCodeArray.contains(code){
+                
+                    let storyboard: UIStoryboard = UIStoryboard(name: "ComicCheckResult", bundle: nil)//遷移先のStoryboardを設定
+                    let nextView = storyboard.instantiateViewController(withIdentifier: "comicCheckResult") as! ComicCheckResultViewController
+                    nextView.barCode = code
+                    self.navigationController?.pushViewController(nextView, animated: true)
+                }else{
+                
+                    let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+
+                        self.avCaptureSession.startRunning()
+                    }
+                    showActionSheet(title: "スキャン済みです", message: "過去にスキャン済みなのでリストを確認してください。", actions: [okAction])
+                }
                 
                 
-                let storyboard: UIStoryboard = UIStoryboard(name: "ComicCheckResult", bundle: nil)//遷移先のStoryboardを設定
-                let nextView = storyboard.instantiateViewController(withIdentifier: "comicCheckResult") as! ComicCheckResultViewController
-                nextView.barCode = code
-                self.navigationController?.pushViewController(nextView, animated: true)
                 
                 
             }else if code[start] == "1"{

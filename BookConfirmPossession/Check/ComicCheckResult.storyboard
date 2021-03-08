@@ -44,8 +44,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="購入日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2q-wT-92c">
-                                        <rect key="frame" x="40" y="460" width="54" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2q-wT-92c">
+                                        <rect key="frame" x="40" y="460" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -118,6 +118,7 @@
                         <outlet property="anotherComicButton" destination="W7N-hn-y9K" id="SRh-n1-Urm"/>
                         <outlet property="checkResultLabel" destination="vZ5-7T-LO6" id="SB9-pq-J25"/>
                         <outlet property="comicCoverImageView" destination="SmB-z7-hWb" id="RjL-79-bZd"/>
+                        <outlet property="comicDateKindLabel" destination="j2q-wT-92c" id="WWy-uv-kZn"/>
                         <outlet property="comicPurchaseDate" destination="I0b-al-HHX" id="PfU-5v-srZ"/>
                         <outlet property="comicPurechaseButton" destination="ynZ-GY-Yp7" id="7yG-Cq-VpI"/>
                         <outlet property="comicTitleLabel" destination="Alz-c5-ZyO" id="a6j-ls-0ge"/>
