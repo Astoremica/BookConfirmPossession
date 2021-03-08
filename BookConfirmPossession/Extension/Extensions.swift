@@ -49,8 +49,16 @@ public extension UIViewController {
     /// アクションシート
     func showActionSheet(title: String, message: String, actions: [UIAlertAction]) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        alert.pruneNegativeWidthConstraints()
         actions.forEach { alert.addAction($0) }
         present(alert, animated: true)
+    }
+    private func pruneNegativeWidthConstraints() {
+        for subView in self.view.subviews {
+            for constraint in subView.constraints where constraint.debugDescription.contains("width == - 16") {
+                subView.removeConstraint(constraint)
+            }
+        }
     }
 }
 
@@ -64,3 +72,6 @@ extension UIColor {
         self.init(red: r, green: g, blue: b, alpha: min(max(alpha, 0), 1))
     }
 }
+
+
+
