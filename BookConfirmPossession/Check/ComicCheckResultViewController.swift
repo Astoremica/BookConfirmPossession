@@ -23,31 +23,23 @@ class ComicCheckResultViewController: UIViewController {
     var barCode : String = ""
     var comics: Results<Comics>!
     
-    // imageLinkのデータ構造
-    struct  ImageLinkJson: Codable {
-        let smallThumbnail: String?
-    }
-    // JSONのItem内のデータ構造
-    struct VolumeInfoJson: Codable {
-        // 本の名称
-        let title: String?
-        // 著者
-        let publishedDate : String?
-        // 本の画像
-        let imageLinks: ImageLinkJson?
-    }
+
+    
     // Jsonのitem内のデータ構造
-    struct ItemJson: Codable {
-        let volumeInfo: VolumeInfoJson?
+    struct ResultJson : Codable{
+       var Items: [ItemsJson]?
     }
-    
-    // JSONのデータ構造
-    struct ResultJson: Codable {
-        // 複数要素
-        let kind: String?
-        let items: [ItemJson]?
+
+    struct ItemsJson : Codable{
+       var Item : ItemJson?
     }
-    
+
+    struct ItemJson : Codable{
+       var title:String = ""
+       var salesDate:String = ""
+       var largeImageUrl : String = ""
+    }
+
     
     // 購入したかどうか
     @IBOutlet weak var checkResultLabel: UILabel!
@@ -89,11 +81,12 @@ class ComicCheckResultViewController: UIViewController {
         comicTitleLabel.minimumScaleFactor = 0.5
         
         // リクエストURLの組み立て
-        guard let req_url = URL(string: "https://www.googleapis.com/books/v1/volumes?q=isbn:\(barCode)") else {
+        guard let req_url = URL(string:
+                                    "https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&applicationId=1003971512204266179&isbn=\(barCode)") else {
             return
         }
     
-        
+        print(req_url)
         
         
         // リクエストに必要な情報を生成
@@ -113,10 +106,10 @@ class ComicCheckResultViewController: UIViewController {
                 let json = try decoder.decode(ResultJson.self, from: data!)
                 comics = realm.objects(Comics.self).filter("barBode == '\(self.barCode)'")
                 if comics.count == 0 {
-                    if let comic = json.items?[0].volumeInfo{
-                        self.comicTitle = comic.title ?? ""
-                        self.comicCover = comic.imageLinks?.smallThumbnail ?? ""
-                        self.comicPubdate = comic.publishedDate ?? ""
+                    if let comic = json.Items?.first?.Item{
+                        self.comicTitle = comic.title
+                        self.comicCover = comic.largeImageUrl.replace("?_ex=200x200", "")
+                        self.comicPubdate = comic.salesDate 
                         
                     }else{
                         // 情報が取得できない時
