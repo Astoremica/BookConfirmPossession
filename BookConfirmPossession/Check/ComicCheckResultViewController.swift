@@ -81,16 +81,16 @@ class ComicCheckResultViewController: UIViewController {
         comicTitleLabel.minimumScaleFactor = 0.5
         
         // リクエストURLの組み立て
-        guard let req_url = URL(string:
+        guard let requestUrl = URL(string:
                                     "https://app.rakuten.co.jp/services/api/BooksBook/Search/20170404?format=json&applicationId=1003971512204266179&isbn=\(barCode)") else {
             return
         }
     
-        print(req_url)
+        print(requestUrl)
         
         
         // リクエストに必要な情報を生成
-        let req = URLRequest(url: req_url)
+        let req = URLRequest(url: requestUrl)
         // データ転送を管理するためのセッションを生成
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         // リクエストをタスクとして登録
