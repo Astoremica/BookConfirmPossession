@@ -27,6 +27,19 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setDesign()
+        
+        
+        scanComicListCollectionView.register(UINib(nibName: "ScanComicListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScanComicListCollectionViewCell")
+        
+        
+        scanComicListCollectionView.delegate = self
+        scanComicListCollectionView.dataSource = self
+    }
+    
+    
+    func setDesign(){
         // 選択ボタン
         if (userDefaults.array(forKey: "comics") as? [[String:String]]) != nil{
             navigationItem.rightBarButtonItem = editButtonItem
@@ -44,20 +57,18 @@ class ScanComicListViewController: UIViewController,UICollectionViewDataSource, 
         if traitCollection.userInterfaceStyle == .dark {
             view.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
             scanComicListCollectionView.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
+            scanComicListBuyButton.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
+            scanComicListDeleteButton.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
         }else{
             view.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
             scanComicListCollectionView.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
+            scanComicListBuyButton.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
+            scanComicListDeleteButton.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
         }
         
         collectionLayout.minimumLineSpacing = 20
         collectionLayout.minimumInteritemSpacing = 20
         
-        
-        scanComicListCollectionView.register(UINib(nibName: "ScanComicListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScanComicListCollectionViewCell")
-        
-        
-        scanComicListCollectionView.delegate = self
-        scanComicListCollectionView.dataSource = self
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

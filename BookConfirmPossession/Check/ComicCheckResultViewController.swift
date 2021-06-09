@@ -66,19 +66,7 @@ class ComicCheckResultViewController: UIViewController {
         //        semaphore = DispatchSemaphore(value: 0)
         super.viewDidLoad()
         
-        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        // ナビゲーションバーの影画像（境界線の画像）を空に設定
-        self.navigationController!.navigationBar.shadowImage = UIImage()
-        
-        
-        if traitCollection.userInterfaceStyle == .dark {
-            view.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
-        }else{
-            view.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
-        }
-        // タイトル自動縮小
-        comicTitleLabel.adjustsFontSizeToFitWidth = true
-        comicTitleLabel.minimumScaleFactor = 0.5
+        setDesign()
         
         // リクエストURLの組み立て
         guard let requestUrl = URL(string:
@@ -165,6 +153,27 @@ class ComicCheckResultViewController: UIViewController {
         
         
     }
+    
+    
+    func setDesign()  {
+        self.navigationController!.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        // ナビゲーションバーの影画像（境界線の画像）を空に設定
+        self.navigationController!.navigationBar.shadowImage = UIImage()
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            view.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
+            comicPurechaseButton.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
+            anotherComicButton.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
+        }else{
+            view.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
+            comicPurechaseButton.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
+            anotherComicButton.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
+        }
+        // タイトル自動縮小
+        comicTitleLabel.adjustsFontSizeToFitWidth = true
+        comicTitleLabel.minimumScaleFactor = 0.5
+    }
+    
     
     @IBAction func addAnotherComicButtonAction(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

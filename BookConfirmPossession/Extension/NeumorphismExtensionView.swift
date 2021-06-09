@@ -16,19 +16,26 @@ public extension UIView {
         btnLayer.shadowOffset = CGSize(width: width, height: height)
         btnLayer.shadowRadius = 5
         btnLayer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: roundCorner).cgPath
+
         self.layer.insertSublayer(btnLayer, at: 0)
     }
-    func AddBackground(color : UIColor, roundCorner: CGFloat){
+    func AddBackground(color : UIColor, roundCorner: CGFloat,mode: String){
         let background = CALayer()
         background.backgroundColor = color.cgColor
         background.cornerRadius = roundCorner
-        background.frame.size = CGSize( width:frame.size.width, height:frame.size.height )
+        background.frame.size = CGSize( width:self.frame.size.width, height:self.frame.size.height )
+        
+        if mode == "change"{
+            self.layer.sublayers?.remove(at: 2)
+            self.layer.sublayers?.remove(at: 1)
+            self.layer.sublayers?.remove(at: 0)
+        }
         self.layer.insertSublayer(background, at: 0)
     }
-
-    func Neumorphism(r: CGFloat, g: CGFloat, b: CGFloat, roundCorner: CGFloat){
+    func Neumorphism(r: CGFloat, g: CGFloat, b: CGFloat, roundCorner: CGFloat,mode: String){
         let backGroundColor = UIColor(displayP3Red: r/255, green: g/255, blue: b/255,alpha: 1.0)
-        AddBackground(color: backGroundColor, roundCorner: roundCorner)
+        
+        AddBackground(color: backGroundColor, roundCorner: roundCorner,mode:mode)
         var darkcolor:UIColor
         var lightcolor:UIColor
         if traitCollection.userInterfaceStyle == .dark {

@@ -23,9 +23,18 @@ class HistoryViewController: UIViewController ,UICollectionViewDataSource,UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 選択ボタン
         
         comics = realm.objects(Comics.self)
+        
+        setDesign()
+        
+        historyComicListCollectionView.register(UINib(nibName: "ScanComicListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScanComicListCollectionViewCell")
+        
+        historyComicListCollectionView.delegate = self
+        historyComicListCollectionView.dataSource = self
+    }
+    
+    func setDesign()  {
         
         if comics.count != 0 {
             navigationItem.rightBarButtonItem = editButtonItem
@@ -45,12 +54,8 @@ class HistoryViewController: UIViewController ,UICollectionViewDataSource,UIColl
         
         collectionLayout.minimumLineSpacing = 20
         collectionLayout.minimumInteritemSpacing = 20
-        
-        historyComicListCollectionView.register(UINib(nibName: "ScanComicListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScanComicListCollectionViewCell")
-        
-        historyComicListCollectionView.delegate = self
-        historyComicListCollectionView.dataSource = self
     }
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

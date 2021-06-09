@@ -21,8 +21,17 @@ class ScanComicSaveCompletedViewController: UIViewController,UICollectionViewDat
         super.viewDidLoad()
         
         
-        
+        setDesign()
         // Do any additional setup after loading the view.
+        
+        
+        scanComicListCollectionView.register(UINib(nibName: "ScanComicListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScanComicListCollectionViewCell")
+        
+        scanComicListCollectionView.dataSource = self
+    }
+    
+    
+    func setDesign(){
         if traitCollection.userInterfaceStyle == .dark {
             view.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
             scanComicListCollectionView.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
@@ -32,11 +41,8 @@ class ScanComicSaveCompletedViewController: UIViewController,UICollectionViewDat
         }
         collectionLayout.minimumLineSpacing = 20
         collectionLayout.minimumInteritemSpacing = 20
-        
-        scanComicListCollectionView.register(UINib(nibName: "ScanComicListCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ScanComicListCollectionViewCell")
-        
-        scanComicListCollectionView.dataSource = self
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]{
             return getComicList.count
