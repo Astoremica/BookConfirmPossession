@@ -26,14 +26,24 @@ class HistoryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+    
+        comics = realm.objects(Comics.self)
+        
+        setDesign()
+
+    }
+    
+    func setDesign()  {
         if traitCollection.userInterfaceStyle == .dark {
             view.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
             historyDetailView.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
+            comicDeleteButton.backgroundColor = UIColor(displayP3Red: 85/255, green: 85/255, blue: 85/255,alpha: 1.0)
         }else{
             view.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
             historyDetailView.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
+            comicDeleteButton.backgroundColor = UIColor(displayP3Red: 241/255, green: 241/255, blue: 241/255,alpha: 1.0)
         }
-        comics = realm.objects(Comics.self)
         comicCoverImageView.downloaded(from: comics[selectIndexPath].comicInfo!.comicCover)
         comicTitleLabel.text = comics[selectIndexPath].comicInfo!.comicTitle
         // タイトル自動縮小
@@ -41,9 +51,8 @@ class HistoryDetailViewController: UIViewController {
         comicTitleLabel.minimumScaleFactor = 0.5
         comicPubdateLabel.text = comics[selectIndexPath].comicInfo!.comicPurchaseDate
         comicDeleteButton.setTitleColor(UIColor(hex: "FF6363"), for: .normal)
-        
-    }
 
+    }
     
     
     @IBAction func historyDeleteButtonAction(_ sender: Any) {

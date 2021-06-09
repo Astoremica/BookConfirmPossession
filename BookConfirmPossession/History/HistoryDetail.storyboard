@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h9V-pc-TnN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h9V-pc-TnN">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,10 @@
                                     <constraint firstAttribute="height" constant="60" id="uHC-5v-EpM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
-                                <state key="normal" title="削除"/>
+                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="削除">
+                                    <color key="titleColor" red="1" green="0.38823529410000002" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="historyDeleteButtonAction:" destination="h9V-pc-TnN" eventType="touchUpInside" id="GxD-S0-JRT"/>
                                 </connections>
@@ -31,22 +34,22 @@
                                 <rect key="frame" x="38" y="118" width="314" height="531"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bfu-S3-pG8">
-                                        <rect key="frame" x="41" y="20" width="232" height="342"/>
+                                        <rect key="frame" x="40" y="20" width="234" height="342"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="本のタイトル" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IIE-rw-bWi">
-                                        <rect key="frame" x="10" y="402" width="294" height="30"/>
+                                        <rect key="frame" x="40" y="402" width="234" height="30"/>
                                         <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="購入日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aii-hx-MY0">
-                                        <rect key="frame" x="41" y="472" width="54" height="18"/>
+                                        <rect key="frame" x="40" y="472" width="54" height="18"/>
                                         <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021年3月8日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoR-Dh-K3G">
-                                        <rect key="frame" x="148" y="472" width="125" height="18"/>
+                                        <rect key="frame" x="149" y="472" width="125" height="18"/>
                                         <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -55,17 +58,16 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="IIE-rw-bWi" firstAttribute="top" secondItem="bfu-S3-pG8" secondAttribute="bottom" constant="40" id="Bkd-9p-PbA"/>
-                                    <constraint firstItem="PoR-Dh-K3G" firstAttribute="trailing" secondItem="bfu-S3-pG8" secondAttribute="trailing" id="Due-98-p8A"/>
-                                    <constraint firstItem="aii-hx-MY0" firstAttribute="leading" secondItem="bfu-S3-pG8" secondAttribute="leading" id="FF2-oG-ChZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="bfu-S3-pG8" secondAttribute="trailing" constant="41" id="M4w-gS-jsV"/>
+                                    <constraint firstItem="bfu-S3-pG8" firstAttribute="leading" secondItem="IPX-CO-7HM" secondAttribute="leading" constant="40" id="NzE-lX-aP7"/>
                                     <constraint firstItem="aii-hx-MY0" firstAttribute="centerY" secondItem="PoR-Dh-K3G" secondAttribute="centerY" id="UrY-z1-bCZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="IIE-rw-bWi" secondAttribute="trailing" constant="10" id="WD7-FT-YFP"/>
                                     <constraint firstItem="bfu-S3-pG8" firstAttribute="top" secondItem="IPX-CO-7HM" secondAttribute="top" constant="20" id="XvU-RB-YIC"/>
-                                    <constraint firstItem="IIE-rw-bWi" firstAttribute="centerX" secondItem="IPX-CO-7HM" secondAttribute="centerX" id="keh-Lk-RT7"/>
+                                    <constraint firstItem="IIE-rw-bWi" firstAttribute="trailing" secondItem="bfu-S3-pG8" secondAttribute="trailing" id="YAn-Ex-5w2"/>
+                                    <constraint firstAttribute="trailing" secondItem="bfu-S3-pG8" secondAttribute="trailing" constant="40" id="j0j-g2-TOJ"/>
                                     <constraint firstAttribute="bottom" secondItem="aii-hx-MY0" secondAttribute="bottom" constant="41" id="mix-pn-HYj"/>
-                                    <constraint firstItem="bfu-S3-pG8" firstAttribute="leading" secondItem="IPX-CO-7HM" secondAttribute="leading" constant="41" id="mnb-tA-mbm"/>
+                                    <constraint firstItem="aii-hx-MY0" firstAttribute="leading" secondItem="bfu-S3-pG8" secondAttribute="leading" id="o1S-uB-OaU"/>
+                                    <constraint firstItem="IIE-rw-bWi" firstAttribute="leading" secondItem="bfu-S3-pG8" secondAttribute="leading" id="qXi-UB-0lV"/>
                                     <constraint firstItem="aii-hx-MY0" firstAttribute="top" secondItem="IIE-rw-bWi" secondAttribute="bottom" constant="40" id="rHT-vx-Ff1"/>
-                                    <constraint firstItem="IIE-rw-bWi" firstAttribute="leading" secondItem="IPX-CO-7HM" secondAttribute="leading" constant="10" id="uPv-R5-GmI"/>
+                                    <constraint firstItem="PoR-Dh-K3G" firstAttribute="trailing" secondItem="bfu-S3-pG8" secondAttribute="trailing" id="xTm-WX-KRg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -104,6 +106,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -11,41 +11,39 @@ class NeumorphismButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAttributes()
+        setupAttributes(mode: "first")
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupAttributes()
+        setupAttributes(mode: "first")
     }
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        setupAttributes()
+        setupAttributes(mode: "first")
     }
-    
-    private func setupAttributes() {
+    override var bounds: CGRect {
+        didSet {
+            setupAttributes(mode: "change")
+        }
+    }
+    private func setupAttributes(mode:String) {
         
         if traitCollection.userInterfaceStyle == .dark {
-            setTitleColor(UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255,alpha: 1.0), for: .normal)
-            NeumorphismButton(r: 85, g:85, b:85, roundCorner: 25)
+            NeumorphismButton(r: 85, g:85, b:85, roundCorner: 25,mode: mode)
         }else{
-            setTitleColor(UIColor(displayP3Red: 0/255, green: 0/255, blue: 0/255,alpha: 1.0), for: .normal)
-            NeumorphismButton(r: 241, g:241, b:241, roundCorner: 25)
+            NeumorphismButton(r: 241, g:241, b:241, roundCorner: 25,mode: mode)
         }
     }
     public func changeAttributes(mode:String) {
         
-        print("changeAttributes")
-        print(mode)
         if mode == "dark" {
             print("dark")
-            setTitleColor(UIColor(displayP3Red: 255/255, green: 255/255, blue: 255/255,alpha: 1.0), for: .normal)
-            NeumorphismButton(r: 85, g:85, b:85, roundCorner: 25)
+            NeumorphismButton(r: 85, g:85, b:85, roundCorner: 25,mode: mode)
         }else{
             print("light")
-            setTitleColor(UIColor(displayP3Red: 0/255, green: 0/255, blue: 0/255,alpha: 1.0), for: .normal)
-            NeumorphismButton(r: 241, g:241, b:241, roundCorner: 25)
+            NeumorphismButton(r: 241, g:241, b:241, roundCorner: 25,mode: mode)
         }
     }
-    
+
 }
 
