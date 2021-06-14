@@ -1,0 +1,116 @@
+@charset "UTF-8";
+
+/* Reset CSS */
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+address,
+code,
+del,
+em,
+img,
+ins,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+footer,
+header,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin        : 0px;
+    padding       : 0px;
+    border        : 0;
+    outline       : 0;
+    font-size     : 100%;
+    vertical-align: baseline;
+    background    : transparent;
+}
+
+body {
+    line-height: 1;
+}
+
+header,
+footer,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ol,
+ul {
+    quotes: none;
+}
+
+a {
+    margin        : 0;
+    padding       : 0;
+    font-size     : 100%;
+    vertical-align: baseline;
+    background    : transparent;
+}
+
+li {
+    list-style-type    : none;
+    list-style-position: outside;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing : 0;
+}
+
+img {
+    vertical-align: top;
+    font-size     : 0;
+    line-height   : 0;
+}
+
+input,
+select {
+    vertical-align: middle;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing   : border-box;
+    -ms-box-sizing    : border-box;
+    box-sizing        : border-box;
+}
