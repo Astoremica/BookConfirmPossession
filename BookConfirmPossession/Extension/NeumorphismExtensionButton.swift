@@ -18,17 +18,22 @@ public extension UIButton {
         btnLayer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: roundCorner).cgPath
         self.layer.insertSublayer(btnLayer, at: 0)
     }
-    func AddBackgroundButton(color : UIColor, roundCorner: CGFloat){
+    func AddBackgroundButton(color : UIColor, roundCorner: CGFloat,mode: String){
+        
         let background = CALayer()
         background.backgroundColor = color.cgColor
         background.cornerRadius = roundCorner
         background.frame.size = CGSize( width:frame.size.width, height:frame.size.height )
+        if mode == "change"{
+            self.layer.sublayers?.remove(at: 0)
+        }
         self.layer.insertSublayer(background, at: 0)
+        
     }
 
-    func NeumorphismButton(r: CGFloat, g: CGFloat, b: CGFloat, roundCorner: CGFloat){
+    func NeumorphismButton(r: CGFloat, g: CGFloat, b: CGFloat, roundCorner: CGFloat,mode: String){
         let backGroundColor = UIColor(displayP3Red: r/255, green: g/255, blue: b/255,alpha: 1.0)
-        AddBackgroundButton(color: backGroundColor, roundCorner: roundCorner)
+        AddBackgroundButton(color: backGroundColor, roundCorner: roundCorner,mode: mode)
         var darkcolor:UIColor
         var lightcolor:UIColor
         if traitCollection.userInterfaceStyle == .dark {

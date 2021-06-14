@@ -14,12 +14,14 @@ import AVFoundation
 
 class ComicCheckViewController: UIViewController {
     
+    
+    let userDefaults = UserDefaults.standard
+    let global = Global()
+    
+    
     var avCaptureSession: AVCaptureSession!
     var avPreviewLayer: AVCaptureVideoPreviewLayer!
-
     
-    let global = Global()
-    let comicCheck = ComicCheckAPI()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,7 +137,12 @@ class ComicCheckViewController: UIViewController {
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toScanComicList" {
+            let nextVC = segue.destination as! ScanComicListViewController
+            nextVC.fromPage = 1
+        }
+    }
 }
 extension ComicCheckViewController : AVCaptureMetadataOutputObjectsDelegate {
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
@@ -151,33 +158,48 @@ extension ComicCheckViewController : AVCaptureMetadataOutputObjectsDelegate {
             let start = code.startIndex
             
             if code[start] == "9" {
+                var scanListCodeArray:[String] = []
+                let getComicList = userDefaults.array(forKey: "comics") as? [[String:String]]
+                getComicList.map{
+                    for reco in $0{
+                        scanListCodeArray.append(reco["isbnCode"]!)
+                    }
+                }
 
+                if !scanListCodeArray.contains(code){
                 
-                let storyboard: UIStoryboard = UIStoryboard(name: "ComicCheckResult", bundle: nil)//遷移先のStoryboardを設定
-                let nextView = storyboard.instantiateViewController(withIdentifier: "comicCheckResult") as! ComicCheckResultViewController
-                nextView.barCode = code
-                self.navigationController?.pushViewController(nextView, animated: true)
+                    let storyboard: UIStoryboard = UIStoryboard(name: "ComicCheckResult", bundle: nil)//遷移先のStoryboardを設定
+                    let nextView = storyboard.instantiateViewController(withIdentifier: "comicCheckResult") as! ComicCheckResultViewController
+                    nextView.barCode = code
+                    self.navigationController?.pushViewController(nextView, animated: true)
+                }else{
                 
+                    let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+
+                        self.avCaptureSession.startRunning()
+                    }
+                    showActionSheet(title: "スキャン済みです", message: "過去にスキャン済みなのでリストを確認してください。", actions: [okAction])
+                }
+                
+                
+                
+                
+            }else if code[start] == "1"{
+                // もう一つ上のバーコード
+                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    // OKボタンで再スキャン
+                    self.avCaptureSession.startRunning()
+                }
+                showActionSheet(title: "スキャンミスです", message: "もう一つ上のバーコードです", actions: [okAction])
                 
             }else{
-                // もう一つ上のバーコード
-                
-                let width = self.view.bounds.width
-                let lineText = UILabel()
-                lineText.frame = CGRect(x:0, y: 280, width: width, height: 50)
-                lineText.text = "もう一つ上のバーコードです"
-                lineText.textAlignment = NSTextAlignment.center
-                lineText.textColor = UIColor.red
-                lineText.layer.backgroundColor = UIColor.white.cgColor
-                lineText.font = UIFont(name:"Hiragino Maru Gothic ProN W4", size: 24)
-                lineText.layer.backgroundColor = UIColor.clear.cgColor
-                self.view.addSubview(lineText)
-                avCaptureSession.startRunning()
+                let okAction = UIAlertAction(title: "OK", style: .default) { _ in
+                    // OKボタンで再スキャン
+                    self.avCaptureSession.startRunning()
+                }
+                showActionSheet(title: "スキャンミスです", message: "本ではありません。", actions: [okAction])
             }
-            
         }
-        
-        //        dismiss(animated: true)
     }
 }
 //

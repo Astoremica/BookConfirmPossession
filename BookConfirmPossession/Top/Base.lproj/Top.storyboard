@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PcR-Zs-y0R">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PcR-Zs-y0R">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,38 +16,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GI1-q3-img" customClass="NeumorphismButton" customModule="BookConfirmPossession" customModuleProvider="target">
-                                <rect key="frame" x="33.666666666666657" y="307.66666666666669" width="323" height="69"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GI1-q3-img" customClass="NeumorphismButton" customModule="BookConfirmPossession" customModuleProvider="target">
+                                <rect key="frame" x="30" y="307.66666666666669" width="330" height="69"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="323" id="7FY-qu-uAf"/>
-                                    <constraint firstAttribute="height" constant="69" id="vzN-hW-FkX"/>
+                                    <constraint firstAttribute="height" constant="69" id="vIv-fe-E3A"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="24"/>
-                                <state key="normal" title="読みとる"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                <state key="normal" title="バーコードをスキャン">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
                                 <connections>
                                     <segue destination="H4t-9t-h0S" kind="show" identifier="toComicCheck" id="rVG-KS-Cg5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMF-Ac-zNg" customClass="NeumorphismButton" customModule="BookConfirmPossession" customModuleProvider="target">
-                                <rect key="frame" x="33.666666666666657" y="467.66666666666669" width="323" height="69.000000000000057"/>
+                                <rect key="frame" x="30" y="467.66666666666669" width="330" height="69.000000000000057"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="2Xb-Ho-na0"/>
-                                    <constraint firstAttribute="width" constant="323" id="HQi-V4-Hiz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="24"/>
-                                <state key="normal" title="履歴"/>
+                                <state key="normal" title="履歴">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
                                 <connections>
-                                    <segue destination="Eo2-wj-NTP" kind="show" id="mNS-SD-As9"/>
+                                    <segue destination="Eo2-wj-NTP" kind="show" identifier="toHistory" id="mNS-SD-As9"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lMF-Ac-zNg" secondAttribute="trailing" constant="30" id="05C-Pw-3mL"/>
                             <constraint firstItem="GI1-q3-img" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-80" id="3SI-Yd-Isd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GI1-q3-img" secondAttribute="trailing" priority="750" constant="30" id="79a-Kw-Lkx"/>
+                            <constraint firstItem="lMF-Ac-zNg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Syp-hz-ECb"/>
                             <constraint firstItem="lMF-Ac-zNg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="80" id="aeP-7v-rgL"/>
-                            <constraint firstItem="GI1-q3-img" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dEO-fG-YDu"/>
-                            <constraint firstItem="lMF-Ac-zNg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nxs-4R-C88"/>
+                            <constraint firstItem="GI1-q3-img" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" priority="750" constant="30" id="kDy-fh-gW7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="OfR-QV-KGO">
@@ -104,15 +110,21 @@
     </scenes>
     <designables>
         <designable name="GI1-q3-img">
-            <size key="intrinsicContentSize" width="96" height="36"/>
+            <size key="intrinsicContentSize" width="236" height="36"/>
         </designable>
         <designable name="lMF-Ac-zNg">
             <size key="intrinsicContentSize" width="48" height="36"/>
         </designable>
     </designables>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

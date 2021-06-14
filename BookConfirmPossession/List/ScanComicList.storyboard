@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nbj-cA-OIo">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--リスト-->
+        <scene sceneID="mFV-UQ-mgE">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="nbj-cA-OIo" customClass="ScanComicListViewController" customModule="BookConfirmPossession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AX1-dJ-YKI">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jwb-Qi-q3x">
+                                <rect key="frame" x="0.0" y="88" width="390" height="579"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="qoU-tG-MBY">
+                                    <size key="itemSize" width="143" height="203"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="42" minY="30" maxX="42" maxY="30"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="nbj-cA-OIo" id="IqO-QZ-5fA"/>
+                                    <outlet property="delegate" destination="nbj-cA-OIo" id="Mfs-Rt-bIw"/>
+                                </connections>
+                            </collectionView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RIZ-Ri-KWT" customClass="NeumorphismButton" customModule="BookConfirmPossession" customModuleProvider="target">
+                                <rect key="frame" x="38" y="695" width="314" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="S7Y-Sy-6Yr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
+                                <state key="normal" title="スキャンする"/>
+                                <connections>
+                                    <action selector="backCheckButtonAction:" destination="nbj-cA-OIo" eventType="touchUpInside" id="uFv-z5-YiX"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFe-de-a5S" customClass="NeumorphismButton" customModule="BookConfirmPossession" customModuleProvider="target">
+                                <rect key="frame" x="38" y="695" width="314" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="PNp-58-IdN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
+                                <state key="normal" title="削除"/>
+                                <connections>
+                                    <action selector="deleteSelectedComics:" destination="nbj-cA-OIo" eventType="touchUpInside" id="GOh-A8-UPq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RoB-dG-wRG" customClass="NeumorphismButton" customModule="BookConfirmPossession" customModuleProvider="target">
+                                <rect key="frame" x="38" y="695" width="314" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="S8M-YO-zPK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
+                                <state key="normal" title="買う"/>
+                                <connections>
+                                    <action selector="buySelectedComics:" destination="nbj-cA-OIo" eventType="touchUpInside" id="YFV-fO-jVb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uFn-DF-bJy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uFn-DF-bJy" firstAttribute="trailing" secondItem="RoB-dG-wRG" secondAttribute="trailing" constant="38" id="0ji-I0-Td9"/>
+                            <constraint firstItem="DFe-de-a5S" firstAttribute="centerX" secondItem="AX1-dJ-YKI" secondAttribute="centerX" id="3zB-U8-qBS"/>
+                            <constraint firstItem="RIZ-Ri-KWT" firstAttribute="centerX" secondItem="AX1-dJ-YKI" secondAttribute="centerX" id="4d5-yN-Y0M"/>
+                            <constraint firstItem="DFe-de-a5S" firstAttribute="leading" secondItem="uFn-DF-bJy" secondAttribute="leading" constant="38" id="6Zz-Tu-yoF"/>
+                            <constraint firstItem="RoB-dG-wRG" firstAttribute="centerX" secondItem="AX1-dJ-YKI" secondAttribute="centerX" id="72v-MO-9bD"/>
+                            <constraint firstItem="uFn-DF-bJy" firstAttribute="bottom" secondItem="RoB-dG-wRG" secondAttribute="bottom" constant="55" id="DOn-fk-Jd9"/>
+                            <constraint firstItem="uFn-DF-bJy" firstAttribute="bottom" secondItem="DFe-de-a5S" secondAttribute="bottom" constant="55" id="Ked-wS-8SZ"/>
+                            <constraint firstItem="RoB-dG-wRG" firstAttribute="leading" secondItem="uFn-DF-bJy" secondAttribute="leading" constant="38" id="NWY-WU-wgW"/>
+                            <constraint firstItem="uFn-DF-bJy" firstAttribute="trailing" secondItem="DFe-de-a5S" secondAttribute="trailing" constant="38" id="OpE-pT-AVj"/>
+                            <constraint firstItem="Jwb-Qi-q3x" firstAttribute="top" secondItem="uFn-DF-bJy" secondAttribute="top" id="StM-Rw-xKB"/>
+                            <constraint firstItem="uFn-DF-bJy" firstAttribute="trailing" secondItem="RIZ-Ri-KWT" secondAttribute="trailing" constant="38" id="ZQV-i1-GU8"/>
+                            <constraint firstItem="RIZ-Ri-KWT" firstAttribute="leading" secondItem="uFn-DF-bJy" secondAttribute="leading" constant="38" id="bDd-N7-0Tp"/>
+                            <constraint firstItem="uFn-DF-bJy" firstAttribute="bottom" secondItem="RIZ-Ri-KWT" secondAttribute="bottom" constant="55" id="eKh-SB-bqg"/>
+                            <constraint firstItem="RIZ-Ri-KWT" firstAttribute="top" secondItem="Jwb-Qi-q3x" secondAttribute="bottom" constant="28" id="gG6-DT-RL9"/>
+                            <constraint firstItem="uFn-DF-bJy" firstAttribute="trailing" secondItem="Jwb-Qi-q3x" secondAttribute="trailing" id="iuA-j2-6Fz"/>
+                            <constraint firstItem="DFe-de-a5S" firstAttribute="top" secondItem="Jwb-Qi-q3x" secondAttribute="bottom" constant="28" id="lQb-gb-8ch"/>
+                            <constraint firstItem="Jwb-Qi-q3x" firstAttribute="leading" secondItem="uFn-DF-bJy" secondAttribute="leading" id="wNo-YF-4ry"/>
+                            <constraint firstItem="RoB-dG-wRG" firstAttribute="top" secondItem="Jwb-Qi-q3x" secondAttribute="bottom" constant="28" id="wcC-2e-YQy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="リスト" id="Ox8-2i-Ttl"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="backCheckButton" destination="RIZ-Ri-KWT" id="NUa-yQ-85e"/>
+                        <outlet property="scanComicListBuyButton" destination="RoB-dG-wRG" id="rGd-1B-RRc"/>
+                        <outlet property="scanComicListCollectionView" destination="Jwb-Qi-q3x" id="pot-YG-cdD"/>
+                        <outlet property="scanComicListDeleteButton" destination="DFe-de-a5S" id="h89-oA-5cU"/>
+                        <segue destination="Bsb-N0-HRh" kind="show" identifier="toSaveCompleted" id="3WM-tA-rXA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9uR-34-sg6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124.61538461538461" y="185.54502369668245"/>
+        </scene>
+        <!--ScanComicSaveCompleted-->
+        <scene sceneID="oqU-d7-jhN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ScanComicSaveCompleted" id="Bsb-N0-HRh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="U6H-ps-pcf"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5I-Pp-30j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005" y="155"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="DFe-de-a5S">
+            <size key="intrinsicContentSize" width="60" height="42"/>
+        </designable>
+        <designable name="RIZ-Ri-KWT">
+            <size key="intrinsicContentSize" width="179" height="42"/>
+        </designable>
+        <designable name="RoB-dG-wRG">
+            <size key="intrinsicContentSize" width="60" height="42"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

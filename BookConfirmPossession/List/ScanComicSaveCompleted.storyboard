@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wk8-PM-ut1">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scan Comic Save Completed View Controller-->
+        <scene sceneID="lHz-no-5jR">
+            <objects>
+                <viewController storyboardIdentifier="comicSaveCompleted" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wk8-PM-ut1" customClass="ScanComicSaveCompletedViewController" customModule="BookConfirmPossession" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hbX-Gb-wEQ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="履歴に追加しました" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcF-Oa-b9O">
+                                <rect key="frame" x="60" y="74" width="270" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBI-9B-Cv8" customClass="NeumorphismButton" customModule="BookConfirmPossession" customModuleProvider="target">
+                                <rect key="frame" x="30" y="695" width="330" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="R6S-3K-eth"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="30"/>
+                                <state key="normal" title="トップにもどる">
+                                    <color key="titleColor" systemColor="systemBlueColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="backTopButtonAction:" destination="wk8-PM-ut1" eventType="touchUpInside" id="0NK-Ps-3gw"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="RIr-ha-DY1">
+                                <rect key="frame" x="0.0" y="114" width="390" height="553"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="OHi-uG-LRH">
+                                    <size key="itemSize" width="143" height="203"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="42" minY="30" maxX="42" maxY="30"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="wk8-PM-ut1" id="mkk-GV-y13"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oup-lT-lb1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Oup-lT-lb1" firstAttribute="trailing" secondItem="TBI-9B-Cv8" secondAttribute="trailing" constant="30" id="4HE-Oq-fQa"/>
+                            <constraint firstItem="Oup-lT-lb1" firstAttribute="bottom" secondItem="TBI-9B-Cv8" secondAttribute="bottom" constant="55" id="F4x-oU-eEh"/>
+                            <constraint firstItem="TBI-9B-Cv8" firstAttribute="leading" secondItem="Oup-lT-lb1" secondAttribute="leading" constant="30" id="I64-FH-9Qf"/>
+                            <constraint firstItem="Oup-lT-lb1" firstAttribute="trailing" secondItem="RIr-ha-DY1" secondAttribute="trailing" id="L0b-3k-cbk"/>
+                            <constraint firstItem="TBI-9B-Cv8" firstAttribute="top" secondItem="RIr-ha-DY1" secondAttribute="bottom" constant="28" id="dep-BN-bAS"/>
+                            <constraint firstItem="WcF-Oa-b9O" firstAttribute="top" secondItem="Oup-lT-lb1" secondAttribute="top" constant="30" id="gXT-Ii-jaR"/>
+                            <constraint firstItem="RIr-ha-DY1" firstAttribute="leading" secondItem="Oup-lT-lb1" secondAttribute="leading" id="kuf-35-MYr"/>
+                            <constraint firstItem="WcF-Oa-b9O" firstAttribute="centerX" secondItem="hbX-Gb-wEQ" secondAttribute="centerX" id="oXc-dX-6Cf"/>
+                            <constraint firstItem="RIr-ha-DY1" firstAttribute="top" secondItem="WcF-Oa-b9O" secondAttribute="bottom" constant="10" id="qNp-Jt-nfY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backTopButton" destination="TBI-9B-Cv8" id="oVM-zj-GfT"/>
+                        <outlet property="scanComicListCollectionView" destination="RIr-ha-DY1" id="0B4-q1-N9r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fRv-bO-8Xz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79.710144927536234" y="170.75892857142856"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="TBI-9B-Cv8">
+            <size key="intrinsicContentSize" width="208" height="42"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

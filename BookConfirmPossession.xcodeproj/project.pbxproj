@@ -3,37 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03D825A56D898BF1C7511D94 /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B7B62332E728AF460CAB225 /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework */; };
+		72AEDB2EE5862B8A7B8616C6 /* Pods_BookConfirmPossessionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 299B10793C449931293B3474 /* Pods_BookConfirmPossessionTests.framework */; };
+		84D9FCDF410C754FF8FA5A01 /* Pods_BookConfirmPossession.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B565820A0650136949D186D /* Pods_BookConfirmPossession.framework */; };
 		ED095CA225E867FD00C20182 /* Top.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED095C9925E867FD00C20182 /* Top.strings */; };
 		ED095CA325E867FD00C20182 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED095C9B25E867FD00C20182 /* TopViewController.swift */; };
 		ED095CA425E867FD00C20182 /* Top.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED095C9C25E867FD00C20182 /* Top.storyboard */; };
+		ED106F7025EFA753006EAE92 /* ScanComicList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED106F6F25EFA753006EAE92 /* ScanComicList.storyboard */; };
+		ED106F8025EFA79B006EAE92 /* ScanComicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED106F7F25EFA79B006EAE92 /* ScanComicListViewController.swift */; };
+		ED106F8C25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED106F8A25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift */; };
+		ED106F8D25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED106F8B25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.xib */; };
 		ED2F8BFC25DF676F008D3D78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F8BFB25DF676F008D3D78 /* AppDelegate.swift */; };
 		ED2F8BFE25DF676F008D3D78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F8BFD25DF676F008D3D78 /* SceneDelegate.swift */; };
 		ED2F8C0525DF6770008D3D78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED2F8C0425DF6770008D3D78 /* Assets.xcassets */; };
 		ED2F8C0825DF6770008D3D78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED2F8C0625DF6770008D3D78 /* LaunchScreen.storyboard */; };
 		ED2F8C1325DF6770008D3D78 /* BookConfirmPossessionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F8C1225DF6770008D3D78 /* BookConfirmPossessionTests.swift */; };
 		ED2F8C1E25DF6770008D3D78 /* BookConfirmPossessionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2F8C1D25DF6770008D3D78 /* BookConfirmPossessionUITests.swift */; };
-		ED5A161B25E86859002A1035 /* UIColorHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A161A25E86859002A1035 /* UIColorHex.swift */; };
+		ED41A39225F2890100F05F5A /* ScanComicSaveCompleted.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED41A39125F2890100F05F5A /* ScanComicSaveCompleted.storyboard */; };
+		ED41A39725F2891500F05F5A /* ScanComicSaveCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED41A39625F2891500F05F5A /* ScanComicSaveCompletedViewController.swift */; };
 		ED5A162125E868B3002A1035 /* NeumorphismExtensionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A162025E868B3002A1035 /* NeumorphismExtensionButton.swift */; };
 		ED5A162A25E86917002A1035 /* NeumorphismButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5A162925E86917002A1035 /* NeumorphismButton.swift */; };
 		ED5A163225E86B92002A1035 /* History.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED5A163125E86B92002A1035 /* History.storyboard */; };
-		ED7BE6FA25EBC435003EE161 /* ComicCheckAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE6F925EBC435003EE161 /* ComicCheckAPI.swift */; };
 		ED7BE70225EBF464003EE161 /* ComicCheckResult.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7BE70125EBF464003EE161 /* ComicCheckResult.storyboard */; };
 		ED7BE70725EBF490003EE161 /* ComicCheckResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7BE70625EBF490003EE161 /* ComicCheckResultViewController.swift */; };
 		ED88060225E88D2F00F793C7 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88060125E88D2F00F793C7 /* HistoryViewController.swift */; };
-		ED88061225E8971700F793C7 /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88061025E8971700F793C7 /* HistoryCollectionViewCell.swift */; };
-		ED88061325E8971700F793C7 /* HistoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED88061125E8971700F793C7 /* HistoryCollectionViewCell.xib */; };
 		ED88062625E8A62300F793C7 /* HistoryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED88062525E8A62300F793C7 /* HistoryDetail.storyboard */; };
 		ED88062B25E8A7C700F793C7 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88062A25E8A7C700F793C7 /* HistoryDetailViewController.swift */; };
 		ED88063025E8A9A500F793C7 /* ComicCheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED88062F25E8A9A500F793C7 /* ComicCheck.storyboard */; };
 		ED88063525E8AA1300F793C7 /* ComicCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED88063425E8AA1300F793C7 /* ComicCheckViewController.swift */; };
 		EDA2063E25EE18EB003A1555 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA2063D25EE18EB003A1555 /* Global.swift */; };
+		EDA8DE3D25F2967F00CEB724 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA8DE3C25F2967F00CEB724 /* Functions.swift */; };
 		EDB6A41E25ECAE39008A6259 /* NeumorphismView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A41D25ECAE39008A6259 /* NeumorphismView.swift */; };
 		EDB6A42625ECAF79008A6259 /* NeumorphismExtensionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A42525ECAF79008A6259 /* NeumorphismExtensionView.swift */; };
-		EDB6A43425ECB72D008A6259 /* GetImageByURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A43325ECB72D008A6259 /* GetImageByURL.swift */; };
+		EDB6A43425ECB72D008A6259 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB6A43325ECB72D008A6259 /* Extensions.swift */; };
+		EDD096DE25F5B298000C6FB4 /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD096DD25F5B298000C6FB4 /* UPCarouselFlowLayout.swift */; };
+		EDEDD56425F2118B00123296 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDEDD56325F2118B00123296 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +62,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F7E909F0A3A55B7EF629BE5 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		299B10793C449931293B3474 /* Pods_BookConfirmPossessionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookConfirmPossessionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FD17A1AADA4BFC860196F17 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5EEDBCB7DBEC36BA3C04B46B /* Pods-BookConfirmPossession.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossession.debug.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession.debug.xcconfig"; sourceTree = "<group>"; };
+		6B7B62332E728AF460CAB225 /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B565820A0650136949D186D /* Pods_BookConfirmPossession.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookConfirmPossession.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9373F46CABFE667E3CD857E /* Pods-BookConfirmPossession.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossession.release.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession.release.xcconfig"; sourceTree = "<group>"; };
+		CF0CD5C03084285EB9C57617 /* Pods-BookConfirmPossessionTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossessionTests.debug.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossessionTests/Pods-BookConfirmPossessionTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D37EF538A8E3FD0BCEB506F6 /* Pods-BookConfirmPossessionTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookConfirmPossessionTests.release.xcconfig"; path = "Target Support Files/Pods-BookConfirmPossessionTests/Pods-BookConfirmPossessionTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED095C9A25E867FD00C20182 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Top.strings; sourceTree = "<group>"; };
 		ED095C9B25E867FD00C20182 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		ED095C9D25E867FD00C20182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Top.storyboard; sourceTree = "<group>"; };
+		ED106F6F25EFA753006EAE92 /* ScanComicList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanComicList.storyboard; sourceTree = "<group>"; };
+		ED106F7F25EFA79B006EAE92 /* ScanComicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanComicListViewController.swift; sourceTree = "<group>"; };
+		ED106F8A25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanComicListCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED106F8B25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanComicListCollectionViewCell.xib; sourceTree = "<group>"; };
 		ED2F8BF825DF676F008D3D78 /* BookConfirmPossession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookConfirmPossession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED2F8BFB25DF676F008D3D78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED2F8BFD25DF676F008D3D78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,24 +91,25 @@
 		ED2F8C1D25DF6770008D3D78 /* BookConfirmPossessionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookConfirmPossessionUITests.swift; sourceTree = "<group>"; };
 		ED2F8C1F25DF6770008D3D78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED2F8C3525DF6B4B008D3D78 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		ED5A161A25E86859002A1035 /* UIColorHex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorHex.swift; sourceTree = "<group>"; };
+		ED41A39125F2890100F05F5A /* ScanComicSaveCompleted.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanComicSaveCompleted.storyboard; sourceTree = "<group>"; };
+		ED41A39625F2891500F05F5A /* ScanComicSaveCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanComicSaveCompletedViewController.swift; sourceTree = "<group>"; };
 		ED5A162025E868B3002A1035 /* NeumorphismExtensionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismExtensionButton.swift; sourceTree = "<group>"; };
 		ED5A162925E86917002A1035 /* NeumorphismButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismButton.swift; sourceTree = "<group>"; };
 		ED5A163125E86B92002A1035 /* History.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = History.storyboard; sourceTree = "<group>"; };
-		ED7BE6F925EBC435003EE161 /* ComicCheckAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCheckAPI.swift; sourceTree = "<group>"; };
 		ED7BE70125EBF464003EE161 /* ComicCheckResult.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicCheckResult.storyboard; sourceTree = "<group>"; };
 		ED7BE70625EBF490003EE161 /* ComicCheckResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCheckResultViewController.swift; sourceTree = "<group>"; };
 		ED88060125E88D2F00F793C7 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
-		ED88061025E8971700F793C7 /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		ED88061125E8971700F793C7 /* HistoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		ED88062525E8A62300F793C7 /* HistoryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryDetail.storyboard; sourceTree = "<group>"; };
 		ED88062A25E8A7C700F793C7 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
 		ED88062F25E8A9A500F793C7 /* ComicCheck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicCheck.storyboard; sourceTree = "<group>"; };
 		ED88063425E8AA1300F793C7 /* ComicCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCheckViewController.swift; sourceTree = "<group>"; };
 		EDA2063D25EE18EB003A1555 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		EDA8DE3C25F2967F00CEB724 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		EDB6A41D25ECAE39008A6259 /* NeumorphismView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismView.swift; sourceTree = "<group>"; };
 		EDB6A42525ECAF79008A6259 /* NeumorphismExtensionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeumorphismExtensionView.swift; sourceTree = "<group>"; };
-		EDB6A43325ECB72D008A6259 /* GetImageByURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageByURL.swift; sourceTree = "<group>"; };
+		EDB6A43325ECB72D008A6259 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		EDD096DD25F5B298000C6FB4 /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
+		EDEDD56325F2118B00123296 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D9FCDF410C754FF8FA5A01 /* Pods_BookConfirmPossession.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72AEDB2EE5862B8A7B8616C6 /* Pods_BookConfirmPossessionTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,15 +133,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D825A56D898BF1C7511D94 /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1139812FEB2CF6FBBD935211 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B565820A0650136949D186D /* Pods_BookConfirmPossession.framework */,
+				6B7B62332E728AF460CAB225 /* Pods_BookConfirmPossession_BookConfirmPossessionUITests.framework */,
+				299B10793C449931293B3474 /* Pods_BookConfirmPossessionTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6E6FC287E9C2DF804F06AF83 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5EEDBCB7DBEC36BA3C04B46B /* Pods-BookConfirmPossession.debug.xcconfig */,
+				C9373F46CABFE667E3CD857E /* Pods-BookConfirmPossession.release.xcconfig */,
+				1F7E909F0A3A55B7EF629BE5 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig */,
+				2FD17A1AADA4BFC860196F17 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig */,
+				CF0CD5C03084285EB9C57617 /* Pods-BookConfirmPossessionTests.debug.xcconfig */,
+				D37EF538A8E3FD0BCEB506F6 /* Pods-BookConfirmPossessionTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ED095C9725E867FD00C20182 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				ED106F6F25EFA753006EAE92 /* ScanComicList.storyboard */,
+				ED106F7F25EFA79B006EAE92 /* ScanComicListViewController.swift */,
+				ED106F8B25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.xib */,
+				ED106F8A25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift */,
+				ED41A39125F2890100F05F5A /* ScanComicSaveCompleted.storyboard */,
+				ED41A39625F2891500F05F5A /* ScanComicSaveCompletedViewController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -137,7 +191,6 @@
 			children = (
 				ED88062F25E8A9A500F793C7 /* ComicCheck.storyboard */,
 				ED88063425E8AA1300F793C7 /* ComicCheckViewController.swift */,
-				ED7BE6F925EBC435003EE161 /* ComicCheckAPI.swift */,
 				ED7BE70125EBF464003EE161 /* ComicCheckResult.storyboard */,
 				ED7BE70625EBF490003EE161 /* ComicCheckResultViewController.swift */,
 			);
@@ -149,8 +202,6 @@
 			children = (
 				ED5A163125E86B92002A1035 /* History.storyboard */,
 				ED88060125E88D2F00F793C7 /* HistoryViewController.swift */,
-				ED88061025E8971700F793C7 /* HistoryCollectionViewCell.swift */,
-				ED88061125E8971700F793C7 /* HistoryCollectionViewCell.xib */,
 				ED88062525E8A62300F793C7 /* HistoryDetail.storyboard */,
 				ED88062A25E8A7C700F793C7 /* HistoryDetailViewController.swift */,
 			);
@@ -164,6 +215,8 @@
 				ED2F8C1125DF6770008D3D78 /* BookConfirmPossessionTests */,
 				ED2F8C1C25DF6770008D3D78 /* BookConfirmPossessionUITests */,
 				ED2F8BF925DF676F008D3D78 /* Products */,
+				6E6FC287E9C2DF804F06AF83 /* Pods */,
+				1139812FEB2CF6FBBD935211 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -187,6 +240,7 @@
 				ED095C9725E867FD00C20182 /* List */,
 				ED095C9825E867FD00C20182 /* Top */,
 				EDA2063C25EE12D6003A1555 /* Global */,
+				EDEDD56225F2117C00123296 /* Realm */,
 				ED2F8BFB25DF676F008D3D78 /* AppDelegate.swift */,
 				ED2F8BFD25DF676F008D3D78 /* SceneDelegate.swift */,
 				ED2F8C0425DF6770008D3D78 /* Assets.xcassets */,
@@ -218,9 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				ED5A162025E868B3002A1035 /* NeumorphismExtensionButton.swift */,
-				ED5A161A25E86859002A1035 /* UIColorHex.swift */,
 				EDB6A42525ECAF79008A6259 /* NeumorphismExtensionView.swift */,
-				EDB6A43325ECB72D008A6259 /* GetImageByURL.swift */,
+				EDB6A43325ECB72D008A6259 /* Extensions.swift */,
 			);
 			name = Extension;
 			path = BookConfirmPossession/Extension;
@@ -231,6 +284,8 @@
 			children = (
 				ED5A162925E86917002A1035 /* NeumorphismButton.swift */,
 				EDB6A41D25ECAE39008A6259 /* NeumorphismView.swift */,
+				EDD096DD25F5B298000C6FB4 /* UPCarouselFlowLayout.swift */,
+				EDA8DE3C25F2967F00CEB724 /* Functions.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -244,6 +299,14 @@
 			path = BookConfirmPossession/Global;
 			sourceTree = SOURCE_ROOT;
 		};
+		EDEDD56225F2117C00123296 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				EDEDD56325F2118B00123296 /* Model.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -251,9 +314,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED2F8C2225DF6770008D3D78 /* Build configuration list for PBXNativeTarget "BookConfirmPossession" */;
 			buildPhases = (
+				610EE4CE01C5501DDCDD3CB3 /* [CP] Check Pods Manifest.lock */,
 				ED2F8BF425DF676F008D3D78 /* Sources */,
 				ED2F8BF525DF676F008D3D78 /* Frameworks */,
 				ED2F8BF625DF676F008D3D78 /* Resources */,
+				68E5CCF8239C6CA220A44C13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,6 +333,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED2F8C2525DF6770008D3D78 /* Build configuration list for PBXNativeTarget "BookConfirmPossessionTests" */;
 			buildPhases = (
+				03ED706903B1557FB6E1289B /* [CP] Check Pods Manifest.lock */,
 				ED2F8C0A25DF6770008D3D78 /* Sources */,
 				ED2F8C0B25DF6770008D3D78 /* Frameworks */,
 				ED2F8C0C25DF6770008D3D78 /* Resources */,
@@ -286,9 +352,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED2F8C2825DF6770008D3D78 /* Build configuration list for PBXNativeTarget "BookConfirmPossessionUITests" */;
 			buildPhases = (
+				7D4743A4E5DCAFF00CACBB58 /* [CP] Check Pods Manifest.lock */,
 				ED2F8C1525DF6770008D3D78 /* Sources */,
 				ED2F8C1625DF6770008D3D78 /* Frameworks */,
 				ED2F8C1725DF6770008D3D78 /* Resources */,
+				51483090024710AC01CB38C0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,15 +416,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED41A39225F2890100F05F5A /* ScanComicSaveCompleted.storyboard in Resources */,
 				ED88062625E8A62300F793C7 /* HistoryDetail.storyboard in Resources */,
+				ED106F8D25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.xib in Resources */,
 				ED095CA425E867FD00C20182 /* Top.storyboard in Resources */,
 				ED7BE70225EBF464003EE161 /* ComicCheckResult.storyboard in Resources */,
 				ED2F8C0825DF6770008D3D78 /* LaunchScreen.storyboard in Resources */,
 				ED2F8C0525DF6770008D3D78 /* Assets.xcassets in Resources */,
-				ED88061325E8971700F793C7 /* HistoryCollectionViewCell.xib in Resources */,
 				ED88063025E8A9A500F793C7 /* ComicCheck.storyboard in Resources */,
 				ED5A163225E86B92002A1035 /* History.storyboard in Resources */,
 				ED095CA225E867FD00C20182 /* Top.strings in Resources */,
+				ED106F7025EFA753006EAE92 /* ScanComicList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,24 +446,130 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03ED706903B1557FB6E1289B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookConfirmPossessionTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51483090024710AC01CB38C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession-BookConfirmPossessionUITests/Pods-BookConfirmPossession-BookConfirmPossessionUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		610EE4CE01C5501DDCDD3CB3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookConfirmPossession-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68E5CCF8239C6CA220A44C13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BookConfirmPossession/Pods-BookConfirmPossession-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D4743A4E5DCAFF00CACBB58 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BookConfirmPossession-BookConfirmPossessionUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ED2F8BF425DF676F008D3D78 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ED095CA325E867FD00C20182 /* TopViewController.swift in Sources */,
-				ED5A161B25E86859002A1035 /* UIColorHex.swift in Sources */,
-				ED7BE6FA25EBC435003EE161 /* ComicCheckAPI.swift in Sources */,
 				ED2F8BFC25DF676F008D3D78 /* AppDelegate.swift in Sources */,
 				ED5A162A25E86917002A1035 /* NeumorphismButton.swift in Sources */,
+				EDA8DE3D25F2967F00CEB724 /* Functions.swift in Sources */,
 				ED2F8BFE25DF676F008D3D78 /* SceneDelegate.swift in Sources */,
-				EDB6A43425ECB72D008A6259 /* GetImageByURL.swift in Sources */,
+				ED106F8025EFA79B006EAE92 /* ScanComicListViewController.swift in Sources */,
+				EDB6A43425ECB72D008A6259 /* Extensions.swift in Sources */,
+				ED106F8C25EFB8EE006EAE92 /* ScanComicListCollectionViewCell.swift in Sources */,
 				ED7BE70725EBF490003EE161 /* ComicCheckResultViewController.swift in Sources */,
+				EDEDD56425F2118B00123296 /* Model.swift in Sources */,
 				EDA2063E25EE18EB003A1555 /* Global.swift in Sources */,
+				ED41A39725F2891500F05F5A /* ScanComicSaveCompletedViewController.swift in Sources */,
 				ED88063525E8AA1300F793C7 /* ComicCheckViewController.swift in Sources */,
+				EDD096DE25F5B298000C6FB4 /* UPCarouselFlowLayout.swift in Sources */,
 				EDB6A42625ECAF79008A6259 /* NeumorphismExtensionView.swift in Sources */,
 				ED88062B25E8A7C700F793C7 /* HistoryDetailViewController.swift in Sources */,
-				ED88061225E8971700F793C7 /* HistoryCollectionViewCell.swift in Sources */,
 				EDB6A41E25ECAE39008A6259 /* NeumorphismView.swift in Sources */,
 				ED5A162125E868B3002A1035 /* NeumorphismExtensionButton.swift in Sources */,
 				ED88060225E88D2F00F793C7 /* HistoryViewController.swift in Sources */,
@@ -580,6 +756,7 @@
 		};
 		ED2F8C2325DF6770008D3D78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EEDBCB7DBEC36BA3C04B46B /* Pods-BookConfirmPossession.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -590,15 +767,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yonaios.BookConfirmPossession;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = website.yona.BookConfirmPossession;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		ED2F8C2425DF6770008D3D78 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9373F46CABFE667E3CD857E /* Pods-BookConfirmPossession.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -609,15 +788,17 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yonaios.BookConfirmPossession;
+				MARKETING_VERSION = 1.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = website.yona.BookConfirmPossession;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		ED2F8C2625DF6770008D3D78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF0CD5C03084285EB9C57617 /* Pods-BookConfirmPossessionTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -640,6 +821,7 @@
 		};
 		ED2F8C2725DF6770008D3D78 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D37EF538A8E3FD0BCEB506F6 /* Pods-BookConfirmPossessionTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -662,6 +844,7 @@
 		};
 		ED2F8C2925DF6770008D3D78 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F7E909F0A3A55B7EF629BE5 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -682,6 +865,7 @@
 		};
 		ED2F8C2A25DF6770008D3D78 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FD17A1AADA4BFC860196F17 /* Pods-BookConfirmPossession-BookConfirmPossessionUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
