@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+body {
+    background : #555;
+    font-family: "ヒラギノ丸ゴ Pro W4", "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "HG丸ｺﾞｼｯｸM-PRO", "HGMaruGothicMPRO";
+    color      : #FFF;
+}
+
+h1 {
+    text-align: center;
+    font-size : 1.2em;
+    margin    : 20pt;
+}
+
+h1::after {
+    content    : 'ver.1.0.1';
+    margin-left: 20px;
+    font-size  : 0.8em;
+}
+
+.logo {
+    text-align   : center;
+    margin-bottom: 20pt;
+}
+
+.logo img {
+    width        : 20vw;
+    border-radius: 25%;
+}
+
+h2 {
+    text-align   : center;
+    font-size    : 1.1em;
+    margin-bottom: 20pt;
+}
+
+ul {
+    width : 75vw;
+    margin: 0 auto;
+}
+
+li {
+    line-height: 1.1em;
+}
+
+li:nth-child(odd) {
+    margin-bottom: 10pt;
+    font-size    : 0.9em;
+    color        : rgb(83, 183, 255);
+}
+
+li:nth-child(even) {
+    margin-bottom: 10pt;
+    font-size    : 0.8em;
+}
+
+a {
+    color: #FFF;
+}
+
+.rakutenPolicy {
+    display      : block;
+    margin-bottom: 10pt;
+}
+
+.conntact {
+    display: block;
+}
