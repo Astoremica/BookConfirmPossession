@@ -45,3 +45,7 @@ iOS 14.2(制作開始)
 - 楽天ブックスAPI
 - Realm（CocoaPods）
 
+## 開発経緯等
+
+[note](https://t.co/Nolng6k3G3)
+
